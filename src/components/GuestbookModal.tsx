@@ -82,7 +82,7 @@ export const GuestbookModal: React.FC<GuestbookModalProps> = ({
             <form onSubmit={handleSubmit} className="p-4 rounded-2xl bg-[#f0f8fd] border border-[#bfe3f7] space-y-3 font-khmer">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold font-khmer text-[#096e9f] uppercase tracking-wider">
-                  សរសេរពាក្យជូនពរដល់គូដណ្តប់
+                  សរសេរពាក្យជូនពរដល់គូដណ្តឹង
                 </span>
                 <button
                   type="button"
