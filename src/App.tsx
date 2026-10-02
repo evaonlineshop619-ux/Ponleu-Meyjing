@@ -19,6 +19,7 @@ import {
   Music,
   ExternalLink,
   Gift,
+  Camera,
 } from 'lucide-react';
 import { InvitationCard } from './components/InvitationCard';
 import { RsvpModal } from './components/RsvpModal';
@@ -29,6 +30,8 @@ import { StoryGalleryModal } from './components/StoryGalleryModal';
 import { GuestbookModal } from './components/GuestbookModal';
 import { ShareModal } from './components/ShareModal';
 import { GiftRegistryModal } from './components/GiftRegistryModal';
+import { PhotoSlideshow } from './components/PhotoSlideshow';
+import { PhotoSlideshowModal } from './components/PhotoSlideshowModal';
 import { RsvpSubmission, GuestWish } from './types';
 
 const INITIAL_WISHES: GuestWish[] = [
@@ -76,6 +79,7 @@ export default function App() {
   const [isGuestbookOpen, setIsGuestbookOpen] = useState(false);
   const [isShareOpen, setIsShareOpen] = useState(false);
   const [isGiftRegistryOpen, setIsGiftRegistryOpen] = useState(false);
+  const [isSlideshowOpen, setIsSlideshowOpen] = useState(false);
 
   // Desktop view toggle: phone frame preview vs expanded full view
   const [viewMode, setViewMode] = useState<'card' | 'expanded'>('card');
@@ -213,6 +217,14 @@ export default function App() {
         {/* Right Action buttons */}
         <div className="flex items-center gap-2.5">
           <button
+            onClick={() => setIsSlideshowOpen(true)}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-sky-50 text-slate-700 text-xs font-khmer border border-sky-200 transition-all shadow-2xs"
+          >
+            <Camera className="w-3.5 h-3.5 text-[#0d7bb8]" />
+            <span>ស្លាយរូបថត</span>
+          </button>
+
+          <button
             onClick={() => setIsGiftRegistryOpen(true)}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-sky-50 text-slate-700 text-xs font-khmer border border-sky-200 transition-all shadow-2xs"
           >
@@ -252,6 +264,7 @@ export default function App() {
               onOpenGuestbook={() => setIsGuestbookOpen(true)}
               onOpenShare={() => setIsShareOpen(true)}
               onOpenGiftRegistry={() => setIsGiftRegistryOpen(true)}
+              onOpenSlideshow={() => setIsSlideshowOpen(true)}
               guestCount={totalGuestsAttending}
             />
           </div>
@@ -271,6 +284,7 @@ export default function App() {
                   onOpenGuestbook={() => setIsGuestbookOpen(true)}
                   onOpenShare={() => setIsShareOpen(true)}
                   onOpenGiftRegistry={() => setIsGiftRegistryOpen(true)}
+                  onOpenSlideshow={() => setIsSlideshowOpen(true)}
                   guestCount={totalGuestsAttending}
                 />
               </div>
@@ -336,6 +350,26 @@ export default function App() {
                       <span className="text-[10px] text-slate-500 font-khmer">Google / Apple</span>
                     </button>
                   </div>
+                </div>
+
+                {/* Photo Slideshow Showcase Panel */}
+                <div className="bg-white/90 backdrop-blur-md rounded-3xl p-6 shadow-sm border border-white/80 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <Camera className="w-4 h-4 text-[#0a6699]" />
+                      <h3 className="font-moul text-base text-slate-800">
+                        កម្រងស្លាយរូបថតអនុស្សាវរីយ៍
+                      </h3>
+                    </div>
+                    <button
+                      onClick={() => setIsSlideshowOpen(true)}
+                      className="text-xs text-[#0d7bb8] hover:underline font-semibold font-khmer flex items-center gap-1"
+                    >
+                      <span>បើកមើលពេញអេក្រង់</span>
+                      <span>→</span>
+                    </button>
+                  </div>
+                  <PhotoSlideshow autoPlayInterval={4500} showThumbnails={true} />
                 </div>
 
                 {/* Evening Schedule Timeline Preview */}
@@ -488,6 +522,14 @@ export default function App() {
         </button>
 
         <button
+          onClick={() => setIsSlideshowOpen(true)}
+          className="flex flex-col items-center gap-0.5 text-[10px] font-khmer text-slate-600 hover:text-[#0d7bb8]"
+        >
+          <Camera className="w-4 h-4 text-[#0d7bb8]" />
+          <span>រូបថត</span>
+        </button>
+
+        <button
           onClick={() => setIsStoryOpen(true)}
           className="flex flex-col items-center gap-0.5 text-[10px] font-khmer text-slate-600 hover:text-[#0d7bb8]"
         >
@@ -505,6 +547,11 @@ export default function App() {
       </footer>
 
       {/* Modals */}
+      <PhotoSlideshowModal
+        isOpen={isSlideshowOpen}
+        onClose={() => setIsSlideshowOpen(false)}
+      />
+
       <RsvpModal
         isOpen={isRsvpOpen}
         onClose={() => setIsRsvpOpen(false)}

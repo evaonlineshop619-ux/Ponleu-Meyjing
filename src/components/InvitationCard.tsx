@@ -13,6 +13,7 @@ import {
   Clock,
   Sparkles,
   Gift,
+  Camera,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
@@ -32,6 +33,7 @@ interface InvitationCardProps {
   onOpenGuestbook: () => void;
   onOpenShare: () => void;
   onOpenGiftRegistry: () => void;
+  onOpenSlideshow?: () => void;
   guestCount?: number;
 }
 
@@ -44,6 +46,7 @@ export const InvitationCard: React.FC<InvitationCardProps> = ({
   onOpenGuestbook,
   onOpenShare,
   onOpenGiftRegistry,
+  onOpenSlideshow,
 }) => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
   const [copiedCode, setCopiedCode] = useState(false);
@@ -175,6 +178,23 @@ export const InvitationCard: React.FC<InvitationCardProps> = ({
         </motion.button>
 
         <div className="flex items-center gap-1.5">
+          {onOpenSlideshow && (
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={(e) => {
+                e.stopPropagation();
+                onOpenSlideshow();
+              }}
+              aria-label="ស្លាយរូបថត"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white/70 hover:bg-white/95 backdrop-blur-md text-[#0d7bb8] text-xs font-medium shadow-xs border border-white/80 transition-colors"
+              title="ទស្សនាស្លាយរូបថត"
+            >
+              <Camera className="w-3.5 h-3.5 text-[#0d7bb8]" />
+              <span className="text-[11px] font-khmer font-semibold">រូបថត</span>
+            </motion.button>
+          )}
+
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -448,6 +468,21 @@ export const InvitationCard: React.FC<InvitationCardProps> = ({
 
         {/* Supplementary Navigation links with subtle underline animations */}
         <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 mt-3 text-xs font-khmer text-[#157cb8]">
+          {onOpenSlideshow && (
+            <>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onOpenSlideshow();
+                }}
+                className="flex items-center gap-1 hover:underline hover:text-[#0b6395] transition-colors font-semibold"
+              >
+                <Camera className="w-3.5 h-3.5 text-[#1289dc]" />
+                <span>ស្លាយរូបថត</span>
+              </button>
+              <span className="text-sky-300">·</span>
+            </>
+          )}
           <button
             onClick={(e) => {
               e.stopPropagation();

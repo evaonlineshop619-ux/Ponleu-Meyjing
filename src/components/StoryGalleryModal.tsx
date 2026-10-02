@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Heart, Sparkles, BookOpen, Camera, Calendar } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { PhotoSlideshow } from './PhotoSlideshow';
 
 interface StoryGalleryModalProps {
   isOpen: boolean;
@@ -179,6 +180,20 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({ isOpen, on
               </div>
             ) : (
               <div className="space-y-4">
+                {/* Photo Slideshow Carousel */}
+                <div className="rounded-2xl overflow-hidden shadow-xs">
+                  <PhotoSlideshow autoPlayInterval={4000} showThumbnails={false} compact={true} />
+                </div>
+
+                <div className="flex items-center justify-between pt-1">
+                  <span className="text-xs font-bold font-khmer text-slate-700 uppercase tracking-wider">
+                    កម្រងរូបថតទាំងអស់
+                  </span>
+                  <span className="text-[11px] text-slate-500 font-khmer">
+                    ចុចលើរូបដើម្បីពង្រីក
+                  </span>
+                </div>
+
                 <div className="grid grid-cols-2 gap-3">
                   {galleryItems.map((item, idx) => (
                     <motion.div
