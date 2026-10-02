@@ -248,13 +248,27 @@ export const InvitationCard: React.FC<InvitationCardProps> = ({
           ពិធីភ្ជាប់ពាក្យ
         </h2>
 
-        {/* Central Intertwined Rings Symbol with sparkling diamond glint */}
+        {/* Central Intertwined Rings Symbol with sparkling diamond glint - triggers Photo Slideshow */}
         <motion.div
-          whileHover={{ scale: 1.08 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
           transition={{ type: 'spring', stiffness: 300, damping: 15 }}
-          className="my-2 sm:my-3 cursor-pointer"
+          onClick={(e) => {
+            e.stopPropagation();
+            onOpenSlideshow?.();
+          }}
+          className="my-2 sm:my-3 cursor-pointer group"
+          role="button"
+          tabIndex={0}
+          aria-label="ទស្សនាស្លាយរូបថត (Open Photo Slideshow)"
+          title="ចុចដើម្បីទស្សនាស្លាយរូបថត"
         >
-          <IntertwinedRings />
+          <IntertwinedRings
+            onClick={(e) => {
+              e.stopPropagation();
+              onOpenSlideshow?.();
+            }}
+          />
         </motion.div>
 
         {/* Couple Names in Elegant Khmer Calligraphy */}

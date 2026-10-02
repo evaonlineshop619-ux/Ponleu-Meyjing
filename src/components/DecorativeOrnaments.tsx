@@ -97,17 +97,28 @@ export const BotanicalCorner: React.FC<{
 /**
  * Intertwined wedding rings motif with diamond top and radiant glint animation
  */
-export const IntertwinedRings: React.FC<{ className?: string }> = ({ className = '' }) => {
+export const IntertwinedRings: React.FC<{
+  className?: string;
+  onClick?: (e: React.MouseEvent<SVGSVGElement | HTMLDivElement>) => void;
+}> = ({ className = '', onClick }) => {
   return (
-    <div className={`relative flex items-center justify-center ${className}`}>
-      {/* Soft atmospheric glow circle behind */}
-      <div className="absolute -top-3 right-2 w-8 h-8 rounded-full bg-sky-200/60 blur-[3px] animate-pulse-gentle" />
+    <div
+      onClick={onClick}
+      className={`relative flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 group ${className}`}
+      title="ចុចដើម្បីទស្សនាស្លាយរូបថត (Click to view Photo Slideshow)"
+    >
+      {/* Soft atmospheric glow circle behind with interactive pulse */}
+      <div className="absolute -top-3 right-2 w-8 h-8 rounded-full bg-sky-200/60 blur-[3px] animate-pulse-gentle group-hover:bg-sky-300/80 group-hover:scale-125 transition-all" />
 
       <svg
         viewBox="0 0 120 70"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-16 h-10 sm:w-20 sm:h-12 text-[#1b7ec0]"
+        onClick={onClick}
+        role="button"
+        tabIndex={0}
+        aria-label="ទស្សនាស្លាយរូបថត (Open Photo Slideshow)"
+        className="w-16 h-10 sm:w-20 sm:h-12 text-[#1b7ec0] group-hover:text-[#0b6aa8] cursor-pointer transition-all duration-300 drop-shadow-[0_4px_12px_rgba(27,126,192,0.22)] group-hover:drop-shadow-[0_6px_16px_rgba(27,126,192,0.35)]"
       >
         {/* Left ring */}
         <circle
