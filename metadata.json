@@ -1,8 +1,6 @@
 {
-  "name": "Remix Ponleu \u0026 Meyjing - Engagement Ceremony",
-  "description": "Digital wedding \u0026 engagement invitation for Ponleu and Meyjing with RSVP, directions, calendar, schedule, and guestbook.",
+  "name": "Ponleu & Meyjing - Engagement Ceremony",
+  "description": "Digital wedding & engagement invitation for Ponleu and Meyjing with RSVP, directions, calendar, schedule, and guestbook.",
   "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

@@ -46,11 +46,11 @@ export function calculateTimeLeft(): TimeLeft {
  * Generate Google Calendar URL
  */
 export function getGoogleCalendarUrl(): string {
-  const title = encodeURIComponent('ពិធីភ្ជាប់ពាក្យ ពន្លឺ & ម៉ីជីង');
+  const title = encodeURIComponent('Ponleu & Meyjing - Engagement Ceremony');
   const details = encodeURIComponent(
-    "សូមគោរពអញ្ជើញឯកឧត្តម លោកជំទាវ លោក លោកស្រី អ្នកនាងកញ្ញា អញ្ជើញចូលរួមជាអធិបតី និងជាភ្ញៀវកិត្តិយសក្នុងពិធីភ្ជាប់ពាក្យរវាង ពន្លឺ និង ម៉ីជីង។\n\nសំលៀកបំពាក់៖ សំលៀកបំពាក់ប្រពៃណីខ្មែរ ឬឈុតសមរម្យ ពណ៌ផ្ទៃមេឃស្រាល (Pastel Blue) ឬពណ៌មាសស្រាល\nទីតាំង៖ គេហដ្ឋានខាងស្រី រាជធានីភ្នំពេញ (កូដផែនទី៖ GR4H+89W Phnom Penh)"
+    "Engagement Ceremony of Ponleu & Meyjing. Together with our families, we invite you to celebrate this blessed milestone with us.\n\nDress Code: Smart Formal / Pastel Blue or Traditional Khmer\nVenue: The bride's house, Phnom Penh City (Plus Code: GR4H+89W Phnom Penh)"
   );
-  const location = encodeURIComponent("គេហដ្ឋានខាងស្រី, GR4H+89W, រាជធានីភ្នំពេញ, ប្រទេសកម្ពុជា");
+  const location = encodeURIComponent("The bride's house, GR4H+89W, Phnom Penh City, Cambodia");
   // 20270817T130000Z to 20270817T170000Z (20:00 to 00:00 UTC+7)
   const dates = '20270817T130000Z/20270817T170000Z';
 
@@ -64,7 +64,7 @@ export function downloadIcsFile(): void {
   const icsContent = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Ponleu and Meyjing//Engagement Ceremony//KM',
+    'PRODID:-//Ponleu and Meyjing//Engagement Ceremony//EN',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
     'BEGIN:VEVENT',
@@ -72,9 +72,9 @@ export function downloadIcsFile(): void {
     'DTSTAMP:20261001T000000Z',
     'DTSTART:20270817T130000Z',
     'DTEND:20270817T170000Z',
-    'SUMMARY:ពិធីភ្ជាប់ពាក្យ ពន្លឺ & ម៉ីជីង',
-    "DESCRIPTION:សូមគោរពអញ្ជើញចូលរួមពិធីភ្ជាប់ពាក្យរបស់ ពន្លឺ និង ម៉ីជីង ជាមួយមាតាបិតាទាំងសងខាង។\\n\\nសំលៀកបំពាក់៖ សំលៀកបំពាក់ប្រពៃណីខ្មែរ ឬពណ៌ផ្ទៃមេឃស្រាល\\nកូដផែនទី៖ GR4H+89W Phnom Penh",
-    "LOCATION:គេហដ្ឋានខាងស្រី, GR4H+89W, រាជធានីភ្នំពេញ",
+    'SUMMARY:Ponleu & Meyjing - Engagement Ceremony',
+    "DESCRIPTION:Together with our families, we joyfully invite you to the Engagement Ceremony of Ponleu & Meyjing.\\n\\nDress Code: Smart Formal / Pastel Blue or Traditional Khmer\\nMap Code: GR4H+89W Phnom Penh",
+    "LOCATION:The bride's house, GR4H+89W, Phnom Penh City, Cambodia",
     'STATUS:CONFIRMED',
     'END:VEVENT',
     'END:VCALENDAR',

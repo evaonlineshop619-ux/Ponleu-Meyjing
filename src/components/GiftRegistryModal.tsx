@@ -4,9 +4,14 @@ import {
   Gift,
   Copy,
   Check,
+  CreditCard,
+  QrCode,
+  Heart,
+  ExternalLink,
+  Sparkles,
+  ShoppingBag,
   Plane,
-  Home,
-  ShoppingBag
+  Home
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -40,30 +45,30 @@ export const GiftRegistryModal: React.FC<GiftRegistryModalProps> = ({
   const bankOptions = [
     {
       id: 'aba-usd',
-      bankName: 'ធនាគារ ABA (KHQR / USD)',
+      bankName: 'ABA Bank (KHQR / USD)',
       accountName: 'PONLEU & MEYJING',
       accountNumber: '001 829 402',
       currency: 'USD ($)',
       color: 'from-[#004f71] to-[#01354c]',
-      badge: 'ពេញនិយម',
+      badge: 'Most Popular',
     },
     {
       id: 'aba-khr',
-      bankName: 'ធនាគារ ABA (KHQR / KHR)',
+      bankName: 'ABA Bank (KHQR / KHR)',
       accountName: 'PONLEU & MEYJING',
       accountNumber: '001 829 403',
-      currency: 'រៀល (៛)',
+      currency: 'KHR (៛)',
       color: 'from-[#006080] to-[#004258]',
-      badge: 'ប្រាក់រៀល',
+      badge: 'Khmer Riel',
     },
     {
       id: 'acleda',
-      bankName: 'ធនាគារ អេស៊ីលីដា (ACLEDA)',
+      bankName: 'ACLEDA Bank Plc',
       accountName: 'PONLEU & MEYJING',
-      accountNumber: '2900 1029 4810',
+      accountNumber: '1200-8899-4455',
       currency: 'USD / KHR',
       color: 'from-[#154c79] to-[#0f3453]',
-      badge: 'ទូទាត់ទូទាំងប្រទេស',
+      badge: 'Local Transfer',
     },
   ];
 
@@ -71,29 +76,29 @@ export const GiftRegistryModal: React.FC<GiftRegistryModalProps> = ({
     {
       id: 'honeymoon',
       icon: Plane,
-      title: 'ដំណើរកម្សាន្តក្រេបចន្ទទឹកឃ្មុំ',
-      subtitle: 'ខេត្តសៀមរាប និងឆ្នេរសមុទ្រកោះរ៉ុង',
-      description: 'ការចូលរួមចំណែកសម្រាប់អាហារពេលល្ងាចរ៉ូមែនទិក និងការចងចាំដ៏ស្រស់បំព្រង។',
-      status: 'បើកទទួលពរជ័យ',
-      tag: 'បទពិសោធន៍',
+      title: 'Honeymoon Journey Fund',
+      subtitle: 'Siem Reap & Island Getaway',
+      description: 'Contribute toward our romantic sunset dinner and island retreat memories.',
+      status: 'Open for Blessings',
+      tag: 'Experience',
     },
     {
       id: 'home',
       icon: Home,
-      title: 'គេហដ្ឋាន និងការរស់នៅថ្មី',
-      subtitle: 'គ្រឿងតុបតែងផ្ទះ និងសម្ភារផ្ទះបាយ',
-      description: 'សម្រាប់ការកសាងសំបុកសុភមង្គលដ៏កក់ក្តៅ និងបរិក្ខារចាំបាច់។',
-      status: 'បញ្ជីបំណងប្រាថ្នា',
-      tag: 'គេហដ្ឋាន',
+      title: 'New Home & Living Registry',
+      subtitle: 'Home Decor & Kitchen Appliances',
+      description: 'Placeholder wishlist for cozy home furnishings and kitchen essentials.',
+      status: 'View Wishlist',
+      tag: 'Home',
     },
     {
       id: 'giftcard',
       icon: ShoppingBag,
-      title: 'ប័ណ្ណកាដូផ្សារទំនើប អ៊ីអន',
-      subtitle: 'សាខាសែនសុខ និងមាត់ទន្លេ',
-      description: 'សម្រាប់ទិញសម្ភារប្រើប្រាស់ និងគ្រឿងទេសសម្រាប់គ្រួសារថ្មី។',
-      status: 'ប័ណ្ណកាដូ',
-      tag: 'ទិញទំនិញ',
+      title: 'Aeon Mall Phnom Penh Gift Card',
+      subtitle: 'Sen Sok & Riverside Centers',
+      description: 'Gift cards for celebration dining, lifestyle, and home necessities.',
+      status: 'Gift Cards',
+      tag: 'Shopping',
     },
   ];
 
@@ -115,17 +120,17 @@ export const GiftRegistryModal: React.FC<GiftRegistryModalProps> = ({
                 <Gift className="w-4 h-4" />
               </div>
               <div>
-                <span className="text-[11px] font-khmer-sans text-[#0a6699] font-bold">
-                  ពិធីចងដៃ &amp; អាំងប៉ាវ
+                <span className="text-[10px] font-sans-clean tracking-[0.2em] text-[#0a6699] font-bold uppercase">
+                  Wedding Blessings &amp; Registry
                 </span>
-                <h3 className="font-khmer-moul text-lg text-slate-800 leading-normal">
-                  ពន្លឺ &amp; ម៉ីជីង
+                <h3 className="font-serif-elegant italic text-2xl text-slate-800 leading-none">
+                  Ponleu &amp; Meyjing
                 </h3>
               </div>
             </div>
             <button
               onClick={onClose}
-              className="w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-500 hover:text-slate-800 flex items-center justify-center transition-all shadow-xs cursor-pointer"
+              className="w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-500 hover:text-slate-800 flex items-center justify-center transition-all shadow-xs"
             >
               <X className="w-4 h-4" />
             </button>
@@ -133,31 +138,31 @@ export const GiftRegistryModal: React.FC<GiftRegistryModalProps> = ({
 
           {/* Subheader message */}
           <div className="px-6 pt-4 pb-2 bg-slate-50/50 border-b border-slate-100 text-center">
-            <p className="text-xs text-slate-600 leading-relaxed max-w-md mx-auto font-khmer-sans">
-              «វត្តមានដ៏ឧត្តុង្គឧត្តមរបស់លោកអ្នក គឺជាកាដូដ៏មានតម្លៃបំផុតសម្រាប់ពួកយើង។ សម្រាប់ភ្ញៀវកិត្តិយសដែលមានបំណងចងដៃ ឬផ្ញើពរជ័យតាមរយៈធនាគារអេឡិចត្រូនិក សូមមើលព័ត៌មានខាងក្រោម។»
+            <p className="text-xs text-slate-600 leading-relaxed max-w-md mx-auto">
+              “Your presence at our engagement celebration is the greatest gift of all. For beloved guests wishing to send a blessing or gift, we have provided options below.”
             </p>
 
             {/* Tab switchers */}
             <div className="flex justify-center gap-2 mt-3">
               <button
                 onClick={() => setActiveTab('banking')}
-                className={`py-1.5 px-4 rounded-full text-xs font-khmer-sans font-bold transition-all cursor-pointer ${
+                className={`py-1.5 px-4 rounded-full text-xs font-sans-clean font-bold transition-all ${
                   activeTab === 'banking'
                     ? 'bg-[#1289dc] text-white shadow-xs'
                     : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
                 }`}
               >
-                🏦 ផ្ទេរប្រាក់ធនាគារ / KHQR
+                🏦 Bank Transfer / KHQR
               </button>
               <button
                 onClick={() => setActiveTab('registry')}
-                className={`py-1.5 px-4 rounded-full text-xs font-khmer-sans font-bold transition-all cursor-pointer ${
+                className={`py-1.5 px-4 rounded-full text-xs font-sans-clean font-bold transition-all ${
                   activeTab === 'registry'
                     ? 'bg-[#1289dc] text-white shadow-xs'
                     : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
                 }`}
               >
-                🎁 មូលនិធិក្រេបចន្ទទឹកឃ្មុំ
+                🎁 Gift Wishlists &amp; Funds
               </button>
             </div>
           </div>
@@ -191,14 +196,14 @@ export const GiftRegistryModal: React.FC<GiftRegistryModalProps> = ({
                   </div>
 
                   <div className="min-w-0">
-                    <span className="text-[10px] font-khmer-sans font-bold text-[#0a6699] uppercase tracking-wider block">
-                      ស្កេន KHQR ទូទាំងប្រទេស
+                    <span className="text-[10px] font-sans-clean uppercase font-bold text-[#0a6699] tracking-wider block">
+                      Universal KHQR Scan
                     </span>
-                    <h4 className="font-khmer-sans font-bold text-slate-800 text-sm leading-tight">
-                      ស្កេនជាមួយគ្រប់កម្មវិធីធនាគារនៅកម្ពុជា
+                    <h4 className="font-serif-elegant font-semibold text-slate-800 text-base leading-tight">
+                      Scan with any Cambodian Banking App
                     </h4>
-                    <p className="text-[11px] font-khmer-sans text-slate-500 mt-1 leading-snug">
-                      គាំទ្រកម្មវិធី បាគង (Bakong), ABA, ACLEDA, Wing, Canadia និងធនាគារជាសមាជិក KHQR ទាំងអស់។
+                    <p className="text-[11px] text-slate-500 mt-1 leading-snug">
+                      Supports Bakong, ABA, ACLEDA, Wing, Canadia, and all KHQR member banks.
                     </p>
                   </div>
                 </div>
@@ -212,35 +217,35 @@ export const GiftRegistryModal: React.FC<GiftRegistryModalProps> = ({
                     >
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2">
-                          <span className="font-khmer-sans font-bold text-xs text-slate-800">
+                          <span className="font-sans-clean font-bold text-xs text-slate-800">
                             {bank.bankName}
                           </span>
-                          <span className="text-[9px] font-khmer-sans px-2 py-0.5 rounded-full bg-sky-50 text-[#096e9f] font-semibold border border-sky-100">
+                          <span className="text-[9px] font-sans-clean px-2 py-0.5 rounded-full bg-sky-50 text-[#096e9f] font-semibold border border-sky-100">
                             {bank.currency}
                           </span>
                         </div>
                         <div className="font-mono text-sm font-bold text-[#0d7bb8] tracking-wider mt-1">
                           {bank.accountNumber}
                         </div>
-                        <div className="text-[11px] text-slate-500 font-khmer-sans">
-                          ឈ្មោះគណនី៖ <strong className="text-slate-700">{bank.accountName}</strong>
+                        <div className="text-[11px] text-slate-500 font-sans-clean">
+                          Account Name: <strong className="text-slate-700">{bank.accountName}</strong>
                         </div>
                       </div>
 
                       <button
                         onClick={() => handleCopy(bank.accountNumber, bank.id)}
-                        className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-[#ebf7fd] hover:text-[#0d7bb8] text-slate-700 text-xs font-khmer-sans font-semibold flex items-center gap-1.5 transition-all shrink-0 active:scale-95 cursor-pointer"
-                        title="ចម្លងលេខគណនី"
+                        className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-[#ebf7fd] hover:text-[#0d7bb8] text-slate-700 text-xs font-sans-clean font-semibold flex items-center gap-1.5 transition-all shrink-0 active:scale-95"
+                        title="Copy account number"
                       >
                         {copiedAccount === bank.id ? (
                           <>
                             <Check className="w-3.5 h-3.5 text-emerald-600" />
-                            <span className="text-emerald-700">បានចម្លង</span>
+                            <span className="text-emerald-700">Copied</span>
                           </>
                         ) : (
                           <>
                             <Copy className="w-3.5 h-3.5" />
-                            <span>ចម្លង</span>
+                            <span>Copy</span>
                           </>
                         )}
                       </button>
@@ -263,17 +268,17 @@ export const GiftRegistryModal: React.FC<GiftRegistryModalProps> = ({
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between">
-                          <h4 className="font-khmer-sans font-bold text-slate-800 text-sm leading-tight">
+                          <h4 className="font-serif-elegant font-semibold text-slate-800 text-base leading-tight">
                             {item.title}
                           </h4>
-                          <span className="text-[9px] font-khmer-sans font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">
+                          <span className="text-[9px] font-sans-clean font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">
                             {item.tag}
                           </span>
                         </div>
-                        <p className="text-xs font-khmer-sans font-medium text-[#0a6699] mt-0.5">
+                        <p className="text-xs font-medium text-[#0a6699] mt-0.5">
                           {item.subtitle}
                         </p>
-                        <p className="text-[11px] font-khmer-sans text-slate-500 mt-1 leading-relaxed">
+                        <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
                           {item.description}
                         </p>
 
@@ -283,9 +288,9 @@ export const GiftRegistryModal: React.FC<GiftRegistryModalProps> = ({
                               onClose();
                               onOpenGuestbook();
                             }}
-                            className="inline-flex items-center gap-1 text-xs font-khmer-sans font-bold text-[#1289dc] hover:underline cursor-pointer"
+                            className="inline-flex items-center gap-1 text-xs font-sans-clean font-bold text-[#1289dc] hover:underline"
                           >
-                            <span>ផ្ញើសារពរជ័យជូនគូដណ្តឹង →</span>
+                            <span>Send a Warm Blessing Note →</span>
                           </button>
                         </div>
                       </div>

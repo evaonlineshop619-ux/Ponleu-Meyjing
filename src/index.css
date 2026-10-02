@@ -5,8 +5,6 @@
     --font-alex: 'Alex Brush', cursive;
     --font-cormorant: 'Cormorant Garamond', Georgia, serif;
     --font-jakarta: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    --font-khmer: 'Kantumruy Pro', 'Siemreap', system-ui, sans-serif;
-    --font-moul: 'Moul', cursive, serif;
   }
 }
 
@@ -19,15 +17,7 @@
 }
 
 .font-sans-clean {
-  font-family: 'Kantumruy Pro', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-}
-
-.font-khmer-moul {
-  font-family: 'Moul', cursive, serif;
-}
-
-.font-khmer-sans {
-  font-family: 'Kantumruy Pro', 'Siemreap', system-ui, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
 
 /* ================= Animations ================= */

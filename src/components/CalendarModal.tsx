@@ -34,17 +34,17 @@ export const CalendarModal: React.FC<CalendarModalProps> = ({
                 <CalendarIcon className="w-4 h-4" />
               </div>
               <div>
-                <span className="text-[11px] font-khmer-sans text-[#0a6699] font-bold">
-                  រក្សាទុកកាលបរិច្ឆេទ
+                <span className="text-[10px] font-sans-clean tracking-[0.2em] text-[#0a6699] font-bold uppercase">
+                  Save The Date
                 </span>
-                <h3 className="font-khmer-moul text-lg text-slate-800 leading-normal">
-                  ពិធីភ្ជាប់ពាក្យ
+                <h3 className="font-serif-elegant italic text-2xl text-slate-800 leading-none">
+                  Engagement Ceremony
                 </h3>
               </div>
             </div>
             <button
               onClick={onClose}
-              className="w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-500 hover:text-slate-800 flex items-center justify-center transition-all shadow-xs cursor-pointer"
+              className="w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-500 hover:text-slate-800 flex items-center justify-center transition-all shadow-xs"
             >
               <X className="w-4 h-4" />
             </button>
@@ -54,25 +54,25 @@ export const CalendarModal: React.FC<CalendarModalProps> = ({
           <div className="p-6 overflow-y-auto space-y-5">
             {/* Date Highlight Card */}
             <div className="p-5 rounded-2xl bg-[#f0f8fd] border border-[#bfe3f7] text-center">
-              <span className="text-xs font-khmer-sans font-bold text-[#0a6699]">
-                ថ្ងៃអង្គារ
+              <span className="text-xs font-sans-clean font-bold tracking-[0.2em] text-[#0a6699] uppercase">
+                TUESDAY
               </span>
-              <div className="font-khmer-sans font-bold text-2xl sm:text-3xl text-slate-800 my-1">
-                ទី១៧ ខែសីហា ឆ្នាំ២០២៧
+              <div className="font-serif-elegant text-3xl sm:text-4xl text-slate-800 my-1 font-normal">
+                August 17, 2027
               </div>
-              <div className="flex items-center justify-center gap-2 text-xs font-khmer-sans text-[#0c78b4] font-semibold">
+              <div className="flex items-center justify-center gap-2 text-xs font-sans-clean text-[#0c78b4] font-semibold tracking-wider">
                 <Clock className="w-3.5 h-3.5" />
-                <span>វេលាម៉ោង ៨:០០ យប់ តទៅ</span>
+                <span>8:00 PM ONWARDS (ICT / GMT+7)</span>
               </div>
-              <p className="text-xs font-khmer-sans text-slate-500 mt-2">
-                គេហដ្ឋានខាងស្រី · រាជធានីភ្នំពេញ (GR4H+89W)
+              <p className="text-xs text-slate-500 mt-2">
+                The bride's house · Phnom Penh City (GR4H+89W)
               </p>
             </div>
 
             {/* Direct Calendar Actions */}
             <div className="space-y-3">
-              <h4 className="text-xs font-bold font-khmer-sans text-slate-800">
-                បញ្ចូលទៅក្នុងប្រតិទិនរបស់អ្នក
+              <h4 className="text-xs font-bold font-sans-clean text-slate-800 uppercase tracking-wider">
+                Add to Your Calendar
               </h4>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -80,7 +80,7 @@ export const CalendarModal: React.FC<CalendarModalProps> = ({
                   href={getGoogleCalendarUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-3 px-4 rounded-xl bg-[#1289dc] hover:bg-[#0c7ac6] text-white text-xs font-khmer-sans font-bold flex items-center justify-center gap-2 shadow-sm transition-all hover:scale-[1.02]"
+                  className="py-3.5 px-4 rounded-xl bg-[#1289dc] hover:bg-[#0c7ac6] text-white text-xs font-sans-clean font-bold tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all hover:scale-[1.02]"
                 >
                   <CalendarIcon className="w-4 h-4" />
                   <span>Google Calendar</span>
@@ -89,7 +89,7 @@ export const CalendarModal: React.FC<CalendarModalProps> = ({
 
                 <button
                   onClick={downloadIcsFile}
-                  className="py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-900 text-white text-xs font-khmer-sans font-bold flex items-center justify-center gap-2 shadow-sm transition-all hover:scale-[1.02] cursor-pointer"
+                  className="py-3.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-900 text-white text-xs font-sans-clean font-bold tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all hover:scale-[1.02]"
                 >
                   <Download className="w-4 h-4" />
                   <span>Apple / Outlook (.ICS)</span>
@@ -100,44 +100,44 @@ export const CalendarModal: React.FC<CalendarModalProps> = ({
             {/* Quick Schedule Preview */}
             <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-bold font-khmer-sans text-slate-700">
-                  កម្មវិធីសង្ខេប
+                <span className="text-xs font-bold font-sans-clean text-slate-700 uppercase tracking-wider">
+                  Evening Flow
                 </span>
                 <button
                   onClick={() => {
                     onClose();
                     onOpenSchedule();
                   }}
-                  className="text-xs font-khmer-sans text-[#0d7bb8] hover:underline font-semibold cursor-pointer"
+                  className="text-xs font-sans-clean text-[#0d7bb8] hover:underline font-semibold"
                 >
-                  មើលកម្មវិធីទាំងមូល →
+                  View Full Program →
                 </button>
               </div>
 
-              <div className="space-y-2 text-xs text-slate-600 font-khmer-sans">
+              <div className="space-y-2 text-xs text-slate-600">
                 <div className="flex items-center gap-2.5">
                   <span className="font-mono text-slate-400 font-semibold w-16">7:30 PM</span>
-                  <span>ពិធីទទួលភ្ញៀវ និងតែផ្កាម្លិះ</span>
+                  <span>Welcome Tea &amp; Guest Reception</span>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <span className="font-mono text-sky-700 font-bold w-16">8:00 PM</span>
-                  <span className="font-medium text-slate-800">ពិធីរៀបផ្លែឈើ និងសែនជួបជុំសាច់ញាតិ</span>
+                  <span className="font-medium text-slate-800">Formal Engagement Ceremony</span>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <span className="font-mono text-slate-400 font-semibold w-16">8:45 PM</span>
-                  <span>ពិធីបំពាក់ចិញ្ចៀនភ្ជាប់ពាក្យ</span>
+                  <span>Ring Exchange &amp; Family Blessings</span>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <span className="font-mono text-slate-400 font-semibold w-16">9:15 PM</span>
-                  <span>ពិធីពិសាភោជនាហារ និងតន្ត្រី</span>
+                  <span>Celebration Dinner &amp; Music</span>
                 </div>
               </div>
             </div>
 
-            <div className="flex items-center gap-2 text-[11px] font-khmer-sans text-slate-500 bg-sky-50/60 p-3 rounded-xl border border-sky-100">
+            <div className="flex items-center gap-2 text-[11px] text-slate-500 bg-sky-50/60 p-3 rounded-xl border border-sky-100">
               <Bell className="w-3.5 h-3.5 text-sky-600 shrink-0" />
               <span>
-                យើងខ្ញុំសូមណែនាំឱ្យកំណត់ការរំលឹកទុកជាមុន ១ សប្តាហ៍ និង ១ ថ្ងៃមុនពិធី (ថ្ងៃទី១០ និង ១៦ ខែសីហា)។
+                We recommend setting a reminder 1 week and 1 day prior (August 10 &amp; 16).
               </span>
             </div>
           </div>

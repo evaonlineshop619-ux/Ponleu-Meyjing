@@ -15,53 +15,53 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({ isOpen, on
 
   const milestones = [
     {
-      year: 'ខែវិច្ឆិកា ឆ្នាំ២០២៣',
-      title: 'ការជួបគ្នាដំបូងដោយចៃដន្យ',
-      description: 'បានស្គាល់គ្នាតាមរយៈមិត្តភក្តិរួម នៅហាងកាហ្វេដ៏កក់ក្តៅមួយក្បែរមាត់ទន្លេមេគង្គ ក្នុងរាជធានីភ្នំពេញ។ ការសន្ទនាដ៏សាមញ្ញបានក្លាយជាសំណើច និងក្តីស្រឡាញ់យ៉ាងជ្រាលជ្រៅ។',
+      year: 'November 2023',
+      title: 'A Chance Encounter',
+      description: 'Met through mutual lifelong friends at an intimate café along the Mekong riverside in Phnom Penh. A simple conversation over iced tea turned into three hours of laughter.',
     },
     {
-      year: 'ខែមេសា ឆ្នាំ២០២៤',
-      title: 'បុណ្យចូលឆ្នាំខ្មែរដំបូងជាមួយគ្នា',
-      description: 'បានធ្វើដំណើរកម្សាន្តទៅកាន់ខេត្តសៀមរាបជាមួយក្រុមគ្រួសារ ទទួលពរជ័យ និងទស្សនាថ្ងៃរះដ៏ស្រស់ស្អាតនៅមុខប្រាសាទអង្គរវត្ត។',
+      year: 'April 2024',
+      title: 'Our First Khmer New Year',
+      description: 'Traveling together to Siem Reap with family, sharing blessings, exploring Angkor at sunrise, and realizing we were building a future side by side.',
     },
     {
-      year: 'ខែធ្នូ ឆ្នាំ២០២៥',
-      title: 'ការសុំភ្ជាប់ពាក្យក្រោមពន្លឺចន្ទ',
-      description: 'ក្រោមមេឃស្រឡះ និងខ្យល់ទន្លេដ៏ត្រជាក់ ពន្លឺ បានសុំ ម៉ីជីង កាន់ដៃដើរលើវិថីជីវិតជាមួយគ្នា។ ដោយក្តីរំភើប និងទឹកភ្នែកនៃក្តីសុខ នាងបានឆ្លើយថា យល់ព្រម!',
+      year: 'December 2025',
+      title: 'The Rooftop Question',
+      description: 'Under a sky filled with lanterns and river breezes, Ponleu asked Meyjing to walk hand in hand forever. With tearful joy, she said yes!',
     },
     {
-      year: 'ថ្ងៃទី១៧ ខែសីហា ឆ្នាំ២០២៧',
-      title: 'ពិធីភ្ជាប់ពាក្យជាផ្លូវការ',
-      description: 'ហ៊ុំព័ទ្ធដោយមាតាបិតា ញាតិមិត្ត និងមិត្តភក្តិជាទីស្រឡាញ់ បំពាក់ចិញ្ចៀន និងបោះជំហានឆ្ពោះទៅកាន់អនាគតអាពាហ៍ពិពាហ៍ដ៏ត្រចះត្រចង់។',
+      year: 'August 17, 2027',
+      title: 'Our Engagement Ceremony',
+      description: 'Surrounded by our families and dearest friends, taking our vows and stepping joyfully toward marriage.',
     },
   ];
 
   const galleryItems = [
     {
-      title: 'ថ្ងៃរះនៅអង្គរវត្ត',
-      caption: 'ស្រមោលថ្ងៃរះដ៏រ៉ូមែនទិកនៅសៀមរាប',
-      tag: 'អនុស្សាវរីយ៍ផ្អែមល្ហែម',
+      title: 'Angkor Dawn',
+      caption: 'Sunrise reflections in Siem Reap',
+      tag: 'Cherished Memories',
       gradient: 'from-[#a1c4fd] to-[#c2e9fb]',
       accent: '#2b7fb3',
     },
     {
-      title: 'សំលៀកបំពាក់ប្រពៃណីខ្មែរ',
-      caption: 'ការវាស់កាត់សំលៀកបំពាក់ហូលផាមួងសម្រាប់ពិធីមង្គល',
-      tag: 'ប្រពៃណីខ្មែរ',
+      title: 'Traditional Khmer Silk',
+      caption: 'Fitting our ceremonial engagement garments in Phnom Penh',
+      tag: 'Ceremonial',
       gradient: 'from-[#e0c3fc] to-[#8ec5fc]',
       accent: '#6366f1',
     },
     {
-      title: 'ដើរលេងតាមមាត់ទន្លេ',
-      caption: 'ខ្យល់ត្រជាក់នៃវិថីព្រះស៊ីសុវត្ថិ រាជធានីភ្នំពេញ',
-      tag: 'រាជធានីភ្នំពេញ',
+      title: 'Riverside Strolls',
+      caption: 'Evening walks by the Sisowath Quay breeze',
+      tag: 'Phnom Penh Days',
       gradient: 'from-[#cfd9df] to-[#e2ebf0]',
       accent: '#475569',
     },
     {
-      title: 'ចិញ្ចៀន និងពាក្យសន្យា',
-      caption: 'ពាក្យសន្យានៃក្តីស្រឡាញ់ស្មោះត្រង់ជារៀងរហូត',
-      tag: 'វេលាពិសិដ្ឋ',
+      title: 'The Ring & The Promise',
+      caption: 'A golden hour promise of forever',
+      tag: 'Milestone',
       gradient: 'from-[#fbc2eb] to-[#a6c1ee]',
       accent: '#db2777',
     },
@@ -81,16 +81,16 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({ isOpen, on
           {/* Header */}
           <div className="bg-gradient-to-r from-[#eaf5fc] via-[#dcedf8] to-[#e4f1fa] px-6 py-4 flex items-center justify-between border-b border-sky-100">
             <div>
-              <span className="text-[11px] font-khmer-sans text-[#0a6699] font-bold">
-                ពន្លឺ &amp; ម៉ីជីង
+              <span className="text-[10px] font-sans-clean tracking-[0.2em] text-[#0a6699] font-bold uppercase">
+                Ponleu &amp; Meyjing
               </span>
-              <h3 className="font-khmer-moul text-lg text-slate-800 leading-normal">
-                {activeTab === 'story' ? 'រឿងរ៉ាវស្នេហារបស់យើង' : 'កម្រងរូបភាពអនុស្សាវរីយ៍'}
+              <h3 className="font-serif-elegant italic text-2xl text-slate-800 leading-none">
+                {activeTab === 'story' ? 'Our Love Story' : 'Engagement Gallery'}
               </h3>
             </div>
             <button
               onClick={onClose}
-              className="w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-500 hover:text-slate-800 flex items-center justify-center transition-all shadow-xs cursor-pointer"
+              className="w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-500 hover:text-slate-800 flex items-center justify-center transition-all shadow-xs"
             >
               <X className="w-4 h-4" />
             </button>
@@ -100,14 +100,14 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({ isOpen, on
           <div className="flex border-b border-slate-100 px-6 pt-3 bg-slate-50/50">
             <button
               onClick={() => setActiveTab('story')}
-              className={`pb-3 px-4 text-xs font-khmer-sans font-bold transition-all relative flex items-center gap-1.5 cursor-pointer ${
+              className={`pb-3 px-4 text-xs font-sans-clean font-bold transition-all relative flex items-center gap-1.5 ${
                 activeTab === 'story'
                   ? 'text-[#0d7bb8]'
                   : 'text-slate-500 hover:text-slate-800'
               }`}
             >
               <BookOpen className="w-3.5 h-3.5" />
-              <span>រឿងរ៉ាវស្នេហា</span>
+              <span>Our Journey</span>
               {activeTab === 'story' && (
                 <motion.span
                   layoutId="activeTabUnderline"
@@ -118,14 +118,14 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({ isOpen, on
 
             <button
               onClick={() => setActiveTab('gallery')}
-              className={`pb-3 px-4 text-xs font-khmer-sans font-bold transition-all relative flex items-center gap-1.5 cursor-pointer ${
+              className={`pb-3 px-4 text-xs font-sans-clean font-bold transition-all relative flex items-center gap-1.5 ${
                 activeTab === 'gallery'
                   ? 'text-[#0d7bb8]'
                   : 'text-slate-500 hover:text-slate-800'
               }`}
             >
               <Camera className="w-3.5 h-3.5" />
-              <span>កម្រងរូបភាព</span>
+              <span>Photo Moments</span>
               {activeTab === 'gallery' && (
                 <motion.span
                   layoutId="activeTabUnderline"
@@ -142,14 +142,14 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({ isOpen, on
                 {/* Couple Intro Card */}
                 <div className="p-5 rounded-2xl bg-[#f0f8fd] border border-[#bfe3f7] text-center">
                   <Heart className="w-6 h-6 text-[#1289dc] mx-auto mb-2 fill-sky-200" />
-                  <h4 className="font-khmer-sans font-bold text-lg text-slate-800">
-                    បេះដូងពីរ រួបរួមជាធ្លុងមួយ
+                  <h4 className="font-serif-elegant italic text-2xl text-slate-800">
+                    Two Paths, One Heart
                   </h4>
-                  <p className="text-xs font-khmer-sans text-slate-600 mt-2 leading-relaxed">
-                    «យើងខ្ញុំសូមថ្លែងអំណរគុណយ៉ាងជ្រាលជ្រៅចំពោះមាតាបិតា លោកតាលោកយាយ ញាតិមិត្ត និងមិត្តភក្តិទាំងអស់ ដែលតែងតែផ្តល់ក្តីស្រឡាញ់ និងការគាំទ្រដល់ពួកយើង។ វត្តមានរបស់លោកអ្នកនៅថ្ងៃទី១៧ ខែសីហា គឺជាកិត្តិយស និងជាសេចក្តីរីករាយដ៏ធំធេងបំផុតសម្រាប់ពួកយើង។»
+                  <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                    “We are so grateful to everyone who has touched our lives, guided our paths, and supported our love. Having our families and friends join us on August 17th means the world to us.”
                   </p>
-                  <span className="text-[11px] font-khmer-sans font-semibold text-[#0a6699] mt-3 block">
-                    — ពន្លឺ &amp; ម៉ីជីង
+                  <span className="text-[11px] font-sans-clean font-semibold text-[#0a6699] mt-3 block">
+                    — Ponleu &amp; Meyjing
                   </span>
                 </div>
 
@@ -164,13 +164,13 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({ isOpen, on
                       className="relative"
                     >
                       <div className="absolute -left-[27px] top-1 w-3.5 h-3.5 rounded-full bg-[#1289dc] border-2 border-white shadow-xs" />
-                      <span className="text-[11px] font-khmer-sans font-semibold text-[#096e9f] block">
+                      <span className="text-[11px] font-mono font-semibold text-[#096e9f] block">
                         {m.year}
                       </span>
-                      <h5 className="font-khmer-sans text-base text-slate-800 font-bold mt-0.5">
+                      <h5 className="font-serif-elegant text-lg text-slate-800 font-semibold mt-0.5">
                         {m.title}
                       </h5>
-                      <p className="text-xs font-khmer-sans text-slate-600 mt-1 leading-relaxed">
+                      <p className="text-xs text-slate-600 mt-1 leading-relaxed">
                         {m.description}
                       </p>
                     </motion.div>
@@ -197,10 +197,10 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({ isOpen, on
                       </div>
 
                       <div className="relative z-10 bg-white/85 backdrop-blur-xs p-2 rounded-xl border border-white/80">
-                        <span className="text-[9px] font-khmer-sans font-bold text-sky-700 tracking-wider">
+                        <span className="text-[9px] font-sans-clean uppercase font-bold text-sky-700 tracking-wider">
                           {item.tag}
                         </span>
-                        <h5 className="font-khmer-sans font-bold text-slate-800 text-xs leading-tight">
+                        <h5 className="font-serif-elegant font-semibold text-slate-800 text-sm leading-tight">
                           {item.title}
                         </h5>
                       </div>
@@ -225,7 +225,7 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({ isOpen, on
                     >
                       <button
                         onClick={() => setSelectedPhoto(null)}
-                        className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800 cursor-pointer"
+                        className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800"
                       >
                         <X className="w-4 h-4" />
                       </button>
@@ -234,13 +234,13 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({ isOpen, on
                       >
                         <Heart className="w-16 h-16 text-white/70 animate-pulse" />
                       </div>
-                      <span className="text-xs font-khmer-sans font-bold text-[#0a6699]">
+                      <span className="text-xs font-sans-clean font-bold text-[#0a6699] uppercase tracking-wider">
                         {galleryItems[selectedPhoto].tag}
                       </span>
-                      <h4 className="font-khmer-sans text-xl text-slate-800 mt-1 font-bold">
+                      <h4 className="font-serif-elegant text-2xl text-slate-800 mt-1">
                         {galleryItems[selectedPhoto].title}
                       </h4>
-                      <p className="text-xs font-khmer-sans text-slate-600 mt-2">
+                      <p className="text-xs text-slate-600 mt-2">
                         {galleryItems[selectedPhoto].caption}
                       </p>
                     </motion.div>

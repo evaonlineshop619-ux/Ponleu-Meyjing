@@ -54,17 +54,17 @@ export const DirectionsModal: React.FC<DirectionsModalProps> = ({ isOpen, onClos
                 <MapPin className="w-4 h-4" />
               </div>
               <div>
-                <span className="text-[11px] font-khmer-sans text-[#0a6699] font-bold">
-                  ទីតាំង &amp; ទិសដៅធ្វើដំណើរ
+                <span className="text-[10px] font-sans-clean tracking-[0.2em] text-[#0a6699] font-bold uppercase">
+                  Location &amp; Directions
                 </span>
-                <h3 className="font-khmer-moul text-lg text-slate-800 leading-normal">
-                  គេហដ្ឋានខាងស្រី
+                <h3 className="font-serif-elegant italic text-2xl text-slate-800 leading-none">
+                  The bride's house
                 </h3>
               </div>
             </div>
             <button
               onClick={onClose}
-              className="w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-500 hover:text-slate-800 flex items-center justify-center transition-all shadow-xs cursor-pointer"
+              className="w-8 h-8 rounded-full bg-white/80 hover:bg-white text-slate-500 hover:text-slate-800 flex items-center justify-center transition-all shadow-xs"
             >
               <X className="w-4 h-4" />
             </button>
@@ -118,41 +118,41 @@ export const DirectionsModal: React.FC<DirectionsModalProps> = ({ isOpen, onClos
                   </div>
                 </div>
                 <div className="mt-2 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full shadow-md border border-sky-200">
-                  <span className="font-khmer-sans font-bold text-slate-800 text-sm">
-                    គេហដ្ឋានខាងស្រី · រាជធានីភ្នំពេញ
+                  <span className="font-serif-elegant font-semibold text-slate-800 text-sm">
+                    The bride's house · Phnom Penh
                   </span>
                 </div>
               </div>
 
-              <span className="absolute bottom-2 right-3 text-[10px] font-khmer-sans text-slate-500 bg-white/90 px-2 py-0.5 rounded">
-                ខណ្ឌសែនសុខ រាជធានីភ្នំពេញ
+              <span className="absolute bottom-2 right-3 text-[10px] font-sans-clean text-slate-400 bg-white/80 px-2 py-0.5 rounded">
+                Sen Sok District, Phnom Penh
               </span>
             </div>
 
             {/* Plus Code & Quick Action Box */}
             <div className="p-4 rounded-2xl bg-[#f0f8fd] border border-[#bfe3f7] flex flex-col sm:flex-row items-center justify-between gap-3">
               <div>
-                <span className="text-[11px] font-khmer-sans font-semibold text-slate-500 block">
-                  កូដផែនទី Google Maps Plus Code
+                <span className="text-[11px] font-sans-clean font-semibold text-slate-500 uppercase tracking-wider block">
+                  Google Maps Plus Code
                 </span>
-                <span className="text-base font-bold font-mono text-[#096e9f] tracking-tight">
+                <span className="text-base font-bold font-sans-clean text-[#096e9f] tracking-tight">
                   {plusCode}
                 </span>
               </div>
 
               <button
                 onClick={handleCopyCode}
-                className="w-full sm:w-auto px-4 py-2 rounded-xl bg-white hover:bg-sky-50 border border-sky-200 text-[#0d7bb8] text-xs font-khmer-sans font-bold flex items-center justify-center gap-1.5 shadow-2xs transition-all active:scale-95 cursor-pointer"
+                className="w-full sm:w-auto px-4 py-2 rounded-xl bg-white hover:bg-sky-50 border border-sky-200 text-[#0d7bb8] text-xs font-sans-clean font-semibold flex items-center justify-center gap-1.5 shadow-2xs transition-all active:scale-95"
               >
                 {copied ? (
                   <>
                     <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span className="text-emerald-700">បានចម្លងរួចរាល់!</span>
+                    <span className="text-emerald-700">Copied to Clipboard</span>
                   </>
                 ) : (
                   <>
                     <Copy className="w-3.5 h-3.5" />
-                    <span>ចម្លងកូដផែនទី</span>
+                    <span>Copy Map Code</span>
                   </>
                 )}
               </button>
@@ -164,7 +164,7 @@ export const DirectionsModal: React.FC<DirectionsModalProps> = ({ isOpen, onClos
                 href={googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-3 px-4 rounded-xl bg-[#1289dc] hover:bg-[#0c7ac6] text-white text-xs font-khmer-sans font-bold flex items-center justify-center gap-2 shadow-sm transition-all hover:scale-[1.02]"
+                className="py-3 px-4 rounded-xl bg-[#1289dc] hover:bg-[#0c7ac6] text-white text-xs font-sans-clean font-bold tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all hover:scale-[1.02]"
               >
                 <Navigation className="w-3.5 h-3.5" />
                 <span>Google Maps</span>
@@ -175,7 +175,7 @@ export const DirectionsModal: React.FC<DirectionsModalProps> = ({ isOpen, onClos
                 href={appleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-900 text-white text-xs font-khmer-sans font-bold flex items-center justify-center gap-2 shadow-sm transition-all hover:scale-[1.02]"
+                className="py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-900 text-white text-xs font-sans-clean font-bold tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all hover:scale-[1.02]"
               >
                 <Compass className="w-3.5 h-3.5" />
                 <span>Apple Maps</span>
@@ -185,27 +185,27 @@ export const DirectionsModal: React.FC<DirectionsModalProps> = ({ isOpen, onClos
 
             {/* Travel & Arrival Guidance */}
             <div className="space-y-3 pt-2">
-              <h4 className="text-xs font-bold font-khmer-sans text-slate-800">
-                ការណែនាំអំពីការធ្វើដំណើរ និងការមកដល់
+              <h4 className="text-xs font-bold font-sans-clean text-slate-800 uppercase tracking-wider">
+                Travel &amp; Arrival Tips
               </h4>
 
-              <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 text-xs font-khmer-sans text-slate-600">
+              <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 text-xs text-slate-600">
                 <Car className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-slate-800">Grab &amp; PassApp៖</strong> សូមចម្លងកូដ{' '}
+                  <strong className="text-slate-800">Grab &amp; PassApp:</strong> Paste{' '}
                   <code className="bg-sky-100/70 text-sky-800 px-1 py-0.5 rounded font-mono">
                     GR4H+89W
                   </code>{' '}
-                  ដាក់ចូលក្នុងប្រអប់ស្វែងរកទិសដៅ ដើម្បីទទួលបានការដឹកជញ្ជូនដល់មុខគេហដ្ឋានផ្ទាល់។
+                  into the destination search bar for direct door-to-door drop-off.
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 text-xs font-khmer-sans text-slate-600">
+              <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 text-xs text-slate-600">
                 <AlertCircle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-slate-800">ម៉ោងមកដល់៖</strong> កម្មវិធីពិធីភ្ជាប់ពាក្យនឹងចាប់ផ្តើមជាផ្លូវការនៅវេលាម៉ោង{' '}
-                  <span className="font-semibold text-sky-700">៨:០០ យប់</span>។ ពិធីទទួលភ្ញៀវ និងពិសាតែផ្កាម្លិះ ចាប់ផ្តើមពីម៉ោង{' '}
-                  <span className="font-semibold text-slate-700">៧:៣០ យប់</span>។
+                  <strong className="text-slate-800">Arrival Time:</strong> The ceremony commences
+                  promptly at <span className="font-semibold text-sky-700">8:00 PM</span>. Welcome
+                  tea and reception begin at <span className="font-semibold text-slate-700">7:30 PM</span>.
                 </div>
               </div>
             </div>
