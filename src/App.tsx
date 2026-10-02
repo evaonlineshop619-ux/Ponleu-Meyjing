@@ -34,33 +34,33 @@ import { RsvpSubmission, GuestWish } from './types';
 const INITIAL_WISHES: GuestWish[] = [
   {
     id: 'wish-1',
-    name: 'Dara & Sreypov',
-    relationship: "Bride's Family",
+    name: 'តារា & ស្រីពៅ',
+    relationship: 'សាច់ញាតិខាងស្រី',
     message: 'សូមអបអរសាទរពិធីភ្ជាប់ពាក្យរបស់ប្អូនទាំងពីរ! សូមឱ្យមានសុភមង្គល សុខភាពល្អ និងសេចក្តីស្រឡាញ់ជារៀងរហូត។',
     createdAt: '2026-09-28T10:00:00Z',
     likes: 12,
   },
   {
     id: 'wish-2',
-    name: 'Sopheap Kem',
-    relationship: 'Friend of Ponleu',
-    message: 'Congratulations Ponleu & Meyjing! From our university days to this beautiful milestone, so proud of you brother. See you on the 17th!',
+    name: 'សុភ័ក្រ កែម',
+    relationship: 'មិត្តភក្តិកូនកំលោះ',
+    message: 'អបអរសាទរ ពន្លឺ & ម៉ីជីង! ពីមិត្តភក្តិកាលនៅសាកលវិទ្យាល័យ រហូតមកដល់ថ្ងៃដ៏មានសិរីមង្គលនេះ ពិតជារំភើប និងត្រេកអរជំនួសណាស់។ ជួបគ្នានៅថ្ងៃទី១៧!',
     createdAt: '2026-09-29T14:30:00Z',
     likes: 8,
   },
   {
     id: 'wish-3',
-    name: 'Chantha Nuon',
-    relationship: 'Colleague',
-    message: 'Wishing you both a lifetime of boundless joy, mutual respect, and prosperity. You make such a wonderful pair!',
+    name: 'ចន្ថា នួន',
+    relationship: 'មិត្តរួមការងារ',
+    message: 'សូមជូនពរប្អូនទាំងពីរទទួលបានសុភមង្គលពេញមួយជីវិត ចេះយោគយល់អធ្យាស្រ័យគ្នា និងចម្រុងចម្រើនរុងរឿង។ អ្នកទាំងពីរពិតជាស័ក្តិសមគ្នាខ្លាំងណាស់!',
     createdAt: '2026-09-30T09:15:00Z',
     likes: 5,
   },
   {
     id: 'wish-4',
-    name: 'Vicheka & Vanna',
-    relationship: "Bride's Cousin",
-    message: 'Can’t wait to celebrate with the whole family at the bride’s house! Counting down the days with excitement.',
+    name: 'វិច្ឆិកា & វណ្ណា',
+    relationship: 'បងប្អូនជីដូនមួយ',
+    message: 'ទន្ទឹងរង់ចាំជួបជុំបងប្អូនទាំងអស់គ្នានៅគេហដ្ឋានខាងស្រី! រាប់ថយក្រោយឆ្ពោះទៅកាន់ថ្ងៃពិសេសដោយក្តីរំភើប។',
     createdAt: '2026-10-01T08:00:00Z',
     likes: 7,
   },
@@ -122,18 +122,18 @@ export default function App() {
     // If guest included a message, also add to guestbook wishes
     if (newRsvp.message && newRsvp.message.trim()) {
       const relationLabels: Record<string, string> = {
-        bride_family: "Bride's Family",
-        groom_family: "Groom's Family",
-        bride_friend: "Friend of Meyjing",
-        groom_friend: "Friend of Ponleu",
-        colleague: "Colleague",
-        other: "Guest",
+        bride_family: "សាច់ញាតិខាងស្រី",
+        groom_family: "សាច់ញាតិខាងប្រុស",
+        bride_friend: "មិត្តភក្តិកូនក្រមុំ",
+        groom_friend: "មិត្តភក្តិកូនកំលោះ",
+        colleague: "មិត្តរួមការងារ",
+        other: "ភ្ញៀវកិត្តិយស",
       };
 
       const newWish: GuestWish = {
         id: 'wish-' + Date.now(),
         name: newRsvp.name,
-        relationship: relationLabels[newRsvp.relationship] || 'Honored Guest',
+        relationship: relationLabels[newRsvp.relationship] || 'ភ្ញៀវកិត្តិយស',
         message: newRsvp.message.trim(),
         createdAt: new Date().toISOString(),
         likes: 1,
@@ -166,25 +166,25 @@ export default function App() {
     .reduce((sum, r) => sum + (r.guestsCount || 1), 28); // 28 base confirmed family attendees
 
   return (
-    <div className="min-h-screen bg-[#dcecf7] text-slate-800 antialiased flex flex-col justify-between selection:bg-sky-200 selection:text-sky-900">
+    <div className="min-h-screen bg-[#dcecf7] text-slate-800 antialiased flex flex-col justify-between selection:bg-sky-200 selection:text-sky-900 font-khmer">
       {/* Top Banner on Desktop with Quick Actions & Stats */}
       <header className="hidden lg:flex items-center justify-between px-8 py-3.5 bg-white/70 backdrop-blur-md border-b border-sky-100 shadow-2xs sticky top-0 z-30">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full bg-[#1289dc]/10 text-[#1289dc] flex items-center justify-center font-script text-xl">
-            P&amp;M
+          <div className="w-8 h-8 rounded-full bg-[#1289dc]/10 text-[#1289dc] flex items-center justify-center font-moul text-sm">
+            ព&amp;ម
           </div>
           <div>
-            <h1 className="font-serif-elegant font-semibold text-slate-800 text-base leading-tight">
-              Ponleu &amp; Meyjing's Engagement Ceremony
+            <h1 className="font-moul font-normal text-slate-800 text-sm leading-tight">
+              ពិធីភ្ជាប់ពាក្យ ពន្លឺ &amp; ម៉ីជីង
             </h1>
-            <p className="text-[11px] text-slate-500 font-sans-clean">
-              Tuesday, August 17, 2027 · Phnom Penh City
+            <p className="text-[11px] text-slate-500 font-khmer">
+              ថ្ងៃអង្គារ ទី១៧ ខែសីហា ឆ្នាំ២០២៧ · រាជធានីភ្នំពេញ
             </p>
           </div>
         </div>
 
         {/* Central Navigation Pills */}
-        <nav className="flex items-center gap-1.5 p-1 bg-sky-100/60 rounded-full border border-sky-200/60 text-xs font-sans-clean">
+        <nav className="flex items-center gap-1.5 p-1 bg-sky-100/60 rounded-full border border-sky-200/60 text-xs font-khmer">
           <button
             onClick={() => setViewMode('card')}
             className={`px-3.5 py-1.5 rounded-full transition-all flex items-center gap-1.5 font-medium ${
@@ -194,7 +194,7 @@ export default function App() {
             }`}
           >
             <Smartphone className="w-3.5 h-3.5" />
-            <span>Invitation Card</span>
+            <span>លិខិតអញ្ជើញ</span>
           </button>
 
           <button
@@ -206,7 +206,7 @@ export default function App() {
             }`}
           >
             <Monitor className="w-3.5 h-3.5" />
-            <span>Ceremony Details</span>
+            <span>ព័ត៌មានលម្អិត</span>
           </button>
         </nav>
 
@@ -214,26 +214,26 @@ export default function App() {
         <div className="flex items-center gap-2.5">
           <button
             onClick={() => setIsGiftRegistryOpen(true)}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-sky-50 text-slate-700 text-xs font-sans-clean border border-sky-200 transition-all shadow-2xs"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-sky-50 text-slate-700 text-xs font-khmer border border-sky-200 transition-all shadow-2xs"
           >
             <Gift className="w-3.5 h-3.5 text-amber-500" />
-            <span>Gift Registry</span>
+            <span>អំណោយ</span>
           </button>
 
           <button
             onClick={() => setIsGuestbookOpen(true)}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-sky-50 text-slate-700 text-xs font-sans-clean border border-sky-200 transition-all shadow-2xs"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-sky-50 text-slate-700 text-xs font-khmer border border-sky-200 transition-all shadow-2xs"
           >
             <Heart className="w-3.5 h-3.5 text-rose-500" />
-            <span>Guestbook ({wishes.length})</span>
+            <span>សៀវភៅជូនពរ ({wishes.length})</span>
           </button>
 
           <button
             onClick={() => setIsRsvpOpen(true)}
-            className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#1289dc] hover:bg-[#0c7ac6] text-white text-xs font-sans-clean font-bold tracking-wide shadow-xs transition-all active:scale-95"
+            className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#1289dc] hover:bg-[#0c7ac6] text-white text-xs font-khmer font-bold tracking-wide shadow-xs transition-all active:scale-95"
           >
             <CheckCircle className="w-3.5 h-3.5" />
-            <span>RSVP Now</span>
+            <span>ឆ្លើយតបចូលរួម</span>
           </button>
         </div>
       </header>
@@ -241,7 +241,7 @@ export default function App() {
       {/* Main Content Area */}
       <main className="flex-1 flex flex-col items-center justify-center p-0 sm:p-6 lg:p-8">
         {viewMode === 'card' ? (
-          /* Exact recreation of Image 1.png */
+          /* Exact recreation of Image 1.png in Khmer */
           <div className="w-full flex justify-center">
             <InvitationCard
               onOpenRsvp={() => setIsRsvpOpen(true)}
@@ -257,7 +257,7 @@ export default function App() {
           </div>
         ) : (
           /* Multi-screen Desktop Layout showcasing all screens together */
-          <div className="w-full max-w-6xl mx-auto space-y-8 py-4 animate-in fade-in duration-300">
+          <div className="w-full max-w-6xl mx-auto space-y-8 py-4 animate-in fade-in duration-300 font-khmer">
             {/* Top Showcase Row */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               {/* Primary Invitation Card */}
@@ -281,25 +281,25 @@ export default function App() {
                 <div className="bg-white/90 backdrop-blur-md rounded-3xl p-6 shadow-sm border border-white/80 space-y-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <span className="text-[10px] font-sans-clean font-bold uppercase tracking-[0.2em] text-[#0a6699]">
-                        Engagement Ceremony
+                      <span className="text-[11px] font-khmer font-bold uppercase tracking-wider text-[#0a6699]">
+                        ពិធីពិសាស្លាភ្ជាប់ពាក្យ
                       </span>
-                      <h2 className="font-serif-elegant italic text-3xl text-slate-800">
-                        Ponleu &amp; Meyjing
+                      <h2 className="font-moul text-2xl text-slate-800 mt-1 leading-normal">
+                        ពន្លឺ &amp; ម៉ីជីង
                       </h2>
                     </div>
                     <div className="text-right">
-                      <span className="text-xs font-mono font-bold text-[#0d7bb8] block">
-                        August 17, 2027
+                      <span className="text-xs font-khmer font-bold text-[#0d7bb8] block">
+                        ១៧ សីហា ២០២៧
                       </span>
-                      <span className="text-[11px] text-slate-500 font-sans-clean">
-                        8:00 PM Onwards
+                      <span className="text-[11px] text-slate-500 font-khmer">
+                        ម៉ោង ៨:០០ យប់តទៅ
                       </span>
                     </div>
                   </div>
 
-                  <p className="text-xs text-slate-600 leading-relaxed font-sans-clean">
-                    We invite our esteemed guests, relatives, and close friends to honor us with your gracious presence as we pledge our devotion and exchange our engagement rings.
+                  <p className="text-xs text-slate-600 leading-relaxed font-khmer">
+                    យើងខ្ញុំមានកិត្តិយសសូមគោរពអញ្ជើញ ឯកឧត្តម លោកជំទាវ លោក លោកស្រី អ្នកនាងកញ្ញា អញ្ជើញចូលរួមជាអធិបតី និងជាភ្ញៀវកិត្តិយសក្នុងពិធីពិសាស្លាភ្ជាប់ពាក្យ និងផ្លាស់ប្តូរចិញ្ចៀនអាពាហ៍ពិពាហ៍របស់យើងខ្ញុំទាំងពីរ។
                   </p>
 
                   <div className="grid grid-cols-3 gap-3 pt-2">
@@ -308,10 +308,10 @@ export default function App() {
                       className="p-3 rounded-2xl bg-[#ebf7fd] border border-[#bfe3f7] hover:bg-[#d8effb] transition-all text-center group"
                     >
                       <CheckCircle className="w-5 h-5 text-[#0d7bb8] mx-auto mb-1 group-hover:scale-110 transition-transform" />
-                      <span className="text-xs font-bold text-[#0a6699] block font-sans-clean">
-                        RSVP Attendance
+                      <span className="text-xs font-bold text-[#0a6699] block font-khmer">
+                        ឆ្លើយតបចូលរួម
                       </span>
-                      <span className="text-[10px] text-slate-500">Respond by Aug 1</span>
+                      <span className="text-[10px] text-slate-500 font-khmer">មុនថ្ងៃទី០១ សីហា</span>
                     </button>
 
                     <button
@@ -319,10 +319,10 @@ export default function App() {
                       className="p-3 rounded-2xl bg-[#ebf7fd] border border-[#bfe3f7] hover:bg-[#d8effb] transition-all text-center group"
                     >
                       <MapPin className="w-5 h-5 text-[#0d7bb8] mx-auto mb-1 group-hover:scale-110 transition-transform" />
-                      <span className="text-xs font-bold text-[#0a6699] block font-sans-clean">
-                        Directions
+                      <span className="text-xs font-bold text-[#0a6699] block font-khmer">
+                        បង្ហាញផ្លូវ
                       </span>
-                      <span className="text-[10px] text-slate-500">GR4H+89W Phnom Penh</span>
+                      <span className="text-[10px] text-slate-500 font-khmer">GR4H+89W ភ្នំពេញ</span>
                     </button>
 
                     <button
@@ -330,10 +330,10 @@ export default function App() {
                       className="p-3 rounded-2xl bg-[#ebf7fd] border border-[#bfe3f7] hover:bg-[#d8effb] transition-all text-center group"
                     >
                       <Calendar className="w-5 h-5 text-[#0d7bb8] mx-auto mb-1 group-hover:scale-110 transition-transform" />
-                      <span className="text-xs font-bold text-[#0a6699] block font-sans-clean">
-                        Add to Calendar
+                      <span className="text-xs font-bold text-[#0a6699] block font-khmer">
+                        ដាក់ចូលប្រតិទិន
                       </span>
-                      <span className="text-[10px] text-slate-500">Google / Apple</span>
+                      <span className="text-[10px] text-slate-500 font-khmer">Google / Apple</span>
                     </button>
                   </div>
                 </div>
@@ -343,49 +343,49 @@ export default function App() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4 text-[#0a6699]" />
-                      <h3 className="font-serif-elegant font-semibold text-xl text-slate-800">
-                        Ceremony Timeline
+                      <h3 className="font-moul text-base text-slate-800">
+                        កាលវិភាគនៃកម្មវិធី
                       </h3>
                     </div>
                     <button
                       onClick={() => setIsScheduleOpen(true)}
-                      className="text-xs text-[#0d7bb8] hover:underline font-semibold font-sans-clean"
+                      className="text-xs text-[#0d7bb8] hover:underline font-semibold font-khmer"
                     >
-                      View Details &amp; Dress Code →
+                      ព័ត៌មានលម្អិត &amp; សម្លៀកបំពាក់ →
                     </button>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                     <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
-                      <span className="font-mono text-sky-700 font-bold block">7:30 PM</span>
-                      <strong className="text-slate-800 font-serif-elegant text-sm block">
-                        Welcome Tea &amp; Guest Arrival
+                      <span className="font-mono text-sky-700 font-bold block">7:30 PM (យប់)</span>
+                      <strong className="text-slate-800 font-khmer font-bold text-sm block mt-0.5">
+                        ទទួលភ្ញៀវកិត្តិយស &amp; ពិសាតែ
                       </strong>
-                      <span className="text-[11px] text-slate-500">Jasmine tea and photo booth</span>
+                      <span className="text-[11px] text-slate-500 font-khmer">ពិសាតែផ្កាម្លិះ និងថតរូបអនុស្សាវរីយ៍</span>
                     </div>
 
                     <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
-                      <span className="font-mono text-sky-700 font-bold block">8:00 PM</span>
-                      <strong className="text-slate-800 font-serif-elegant text-sm block">
-                        Formal Ceremony Commences
+                      <span className="font-mono text-sky-700 font-bold block">8:00 PM (យប់)</span>
+                      <strong className="text-slate-800 font-khmer font-bold text-sm block mt-0.5">
+                        ពិធីផ្លូវការចាប់ផ្តើម
                       </strong>
-                      <span className="text-[11px] text-slate-500">Fruit trays &amp; family blessings</span>
+                      <span className="text-[11px] text-slate-500 font-khmer">ក្បួនផ្លែឈើ និងពរជ័យមាតាបិតា</span>
                     </div>
 
                     <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
-                      <span className="font-mono text-sky-700 font-bold block">8:45 PM</span>
-                      <strong className="text-slate-800 font-serif-elegant text-sm block">
-                        Exchange of Rings
+                      <span className="font-mono text-sky-700 font-bold block">8:45 PM (យប់)</span>
+                      <strong className="text-slate-800 font-khmer font-bold text-sm block mt-0.5">
+                        ពិធីបំពាក់ចិញ្ចៀនភ្ជាប់ពាក្យ
                       </strong>
-                      <span className="text-[11px] text-slate-500">Betrothal vows &amp; speeches</span>
+                      <span className="text-[11px] text-slate-500 font-khmer">សច្ចាប្រណិធាន និងការជូនពរ</span>
                     </div>
 
                     <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
-                      <span className="font-mono text-sky-700 font-bold block">9:15 PM</span>
-                      <strong className="text-slate-800 font-serif-elegant text-sm block">
-                        Celebration Banquet
+                      <span className="font-mono text-sky-700 font-bold block">9:15 PM (យប់)</span>
+                      <strong className="text-slate-800 font-khmer font-bold text-sm block mt-0.5">
+                        ពិធីពិសាភោជនាហារ
                       </strong>
-                      <span className="text-[11px] text-slate-500">Dinner, toasts &amp; music</span>
+                      <span className="text-[11px] text-slate-500 font-khmer">ពិសាបាយសាមគ្គី ជល់កែវ និងតន្ត្រី</span>
                     </div>
                   </div>
                 </div>
@@ -395,36 +395,36 @@ export default function App() {
                   <div className="bg-white/90 backdrop-blur-md rounded-3xl p-5 shadow-sm border border-white/80 space-y-3">
                     <div className="flex items-center gap-2">
                       <BookOpen className="w-4 h-4 text-[#0a6699]" />
-                      <h4 className="font-serif-elegant font-semibold text-lg text-slate-800">
-                        Our Story
+                      <h4 className="font-moul text-sm text-slate-800">
+                        ដំណើររឿងរបស់យើង
                       </h4>
                     </div>
-                    <p className="text-xs text-slate-600 leading-relaxed font-sans-clean">
-                      From riverside conversations in Phnom Penh to an unforgettable sunset in Siem Reap, explore the memories that brought us here.
+                    <p className="text-xs text-slate-600 leading-relaxed font-khmer">
+                      ពីការជួបគ្នានៅមាត់ទន្លេភ្នំពេញ រហូតដល់ថ្ងៃលិចដ៏រ៉ូមែនទិកនៅសៀមរាប ស្វែងយល់ពីពេលវេលាដ៏មានអត្ថន័យ។
                     </p>
                     <button
                       onClick={() => setIsStoryOpen(true)}
-                      className="text-xs font-semibold text-[#0d7bb8] hover:underline font-sans-clean"
+                      className="text-xs font-semibold text-[#0d7bb8] hover:underline font-khmer"
                     >
-                      Read Our Journey &amp; Gallery →
+                      អានដំណើររឿង និងរូបថត →
                     </button>
                   </div>
 
                   <div className="bg-white/90 backdrop-blur-md rounded-3xl p-5 shadow-sm border border-white/80 space-y-3">
                     <div className="flex items-center gap-2">
                       <Heart className="w-4 h-4 text-rose-500 fill-rose-100" />
-                      <h4 className="font-serif-elegant font-semibold text-lg text-slate-800">
-                        Guestbook Wishes ({wishes.length})
+                      <h4 className="font-moul text-sm text-slate-800">
+                        សៀវភៅជូនពរ ({wishes.length})
                       </h4>
                     </div>
-                    <p className="text-xs text-slate-600 leading-relaxed font-sans-clean">
-                      Read loving messages from our family and friends, or leave your own blessing for the celebration board.
+                    <p className="text-xs text-slate-600 leading-relaxed font-khmer">
+                      អានសារជូនពរដ៏កក់ក្តៅពីក្រុមគ្រួសារ និងមិត្តភក្តិ ឬសរសេរពាក្យជូនពរផ្ទាល់ខ្លួន។
                     </p>
                     <button
                       onClick={() => setIsGuestbookOpen(true)}
-                      className="text-xs font-semibold text-[#0d7bb8] hover:underline font-sans-clean"
+                      className="text-xs font-semibold text-[#0d7bb8] hover:underline font-khmer"
                     >
-                      Open Blessings Board →
+                      បើកផ្ទាំងជូនពរ →
                     </button>
                   </div>
                 </div>
@@ -436,23 +436,23 @@ export default function App() {
                       <Gift className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[10px] font-sans-clean font-bold uppercase tracking-[0.2em] text-[#0a6699]">
-                        Wedding Blessings &amp; Registry
+                      <span className="text-[10px] font-khmer font-bold uppercase tracking-wider text-[#0a6699]">
+                        អំណោយ និងការជូនពរ
                       </span>
-                      <h4 className="font-serif-elegant font-semibold text-lg text-slate-800">
-                        Gift Registry &amp; Bank Transfer (KHQR)
+                      <h4 className="font-moul text-sm text-slate-800 mt-0.5">
+                        ផ្ទេរប្រាក់តាមធនាគារ (KHQR)
                       </h4>
-                      <p className="text-xs text-slate-600 font-sans-clean">
-                        ABA Bank, ACLEDA, Universal KHQR, and couple honeymoon wishlist.
+                      <p className="text-xs text-slate-600 font-khmer">
+                        ធនាគារ ABA, ធនាគារ អេស៊ីលីដា, Universal KHQR និងមូលនិធិក្រេបចន្ទទឹកឃ្មុំ។
                       </p>
                     </div>
                   </div>
                   <button
                     onClick={() => setIsGiftRegistryOpen(true)}
-                    className="px-4 py-2 rounded-full bg-[#1289dc] hover:bg-[#0c7ac6] text-white text-xs font-sans-clean font-bold tracking-wider shadow-xs transition-all shrink-0 flex items-center gap-1.5 active:scale-95"
+                    className="px-4 py-2 rounded-full bg-[#1289dc] hover:bg-[#0c7ac6] text-white text-xs font-khmer font-bold tracking-wider shadow-xs transition-all shrink-0 flex items-center gap-1.5 active:scale-95"
                   >
                     <Gift className="w-3.5 h-3.5" />
-                    <span>View Registry</span>
+                    <span>មើលគណនីអំណោយ</span>
                   </button>
                 </div>
               </div>
@@ -462,45 +462,45 @@ export default function App() {
       </main>
 
       {/* Floating Bottom Quick Bar on Mobile */}
-      <footer className="lg:hidden sticky bottom-0 z-30 bg-white/90 backdrop-blur-md border-t border-sky-100 px-3 py-2.5 shadow-lg flex items-center justify-between">
+      <footer className="lg:hidden sticky bottom-0 z-30 bg-white/90 backdrop-blur-md border-t border-sky-100 px-3 py-2.5 shadow-lg flex items-center justify-between font-khmer">
         <button
           onClick={() => setIsDirectionsOpen(true)}
-          className="flex flex-col items-center gap-0.5 text-[10px] font-sans-clean text-slate-600 hover:text-[#0d7bb8]"
+          className="flex flex-col items-center gap-0.5 text-[10px] font-khmer text-slate-600 hover:text-[#0d7bb8]"
         >
           <MapPin className="w-4 h-4" />
-          <span>Venue</span>
+          <span>ទីតាំង</span>
         </button>
 
         <button
           onClick={() => setIsScheduleOpen(true)}
-          className="flex flex-col items-center gap-0.5 text-[10px] font-sans-clean text-slate-600 hover:text-[#0d7bb8]"
+          className="flex flex-col items-center gap-0.5 text-[10px] font-khmer text-slate-600 hover:text-[#0d7bb8]"
         >
           <Clock className="w-4 h-4" />
-          <span>Program</span>
+          <span>កម្មវិធី</span>
         </button>
 
         <button
           onClick={() => setIsRsvpOpen(true)}
-          className="px-4 py-2 rounded-full bg-[#1289dc] text-white text-xs font-sans-clean font-bold tracking-wider shadow-sm flex items-center gap-1.5 active:scale-95"
+          className="px-4 py-2 rounded-full bg-[#1289dc] text-white text-xs font-khmer font-bold tracking-wider shadow-sm flex items-center gap-1.5 active:scale-95"
         >
           <CheckCircle className="w-3.5 h-3.5" />
-          <span>RSVP</span>
+          <span>ចូលរួម</span>
         </button>
 
         <button
           onClick={() => setIsStoryOpen(true)}
-          className="flex flex-col items-center gap-0.5 text-[10px] font-sans-clean text-slate-600 hover:text-[#0d7bb8]"
+          className="flex flex-col items-center gap-0.5 text-[10px] font-khmer text-slate-600 hover:text-[#0d7bb8]"
         >
           <BookOpen className="w-4 h-4" />
-          <span>Story</span>
+          <span>ដំណើររឿង</span>
         </button>
 
         <button
           onClick={() => setIsGuestbookOpen(true)}
-          className="flex flex-col items-center gap-0.5 text-[10px] font-sans-clean text-slate-600 hover:text-[#0d7bb8]"
+          className="flex flex-col items-center gap-0.5 text-[10px] font-khmer text-slate-600 hover:text-[#0d7bb8]"
         >
           <Heart className="w-4 h-4" />
-          <span>Wishes</span>
+          <span>ពរជ័យ</span>
         </button>
       </footer>
 

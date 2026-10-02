@@ -33,7 +33,7 @@ export const RsvpModal: React.FC<RsvpModalProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim()) {
-      setError('Please provide your name.');
+      setError('សូមមេត្តាបញ្ចូលឈ្មោះពេញរបស់លោកអ្នក។');
       return;
     }
 
@@ -94,11 +94,11 @@ export const RsvpModal: React.FC<RsvpModalProps> = ({
           {/* Header */}
           <div className="bg-gradient-to-r from-[#eaf5fc] via-[#dcedf8] to-[#e4f1fa] px-6 py-4 flex items-center justify-between border-b border-sky-100">
             <div>
-              <span className="text-[10px] font-sans-clean tracking-[0.2em] text-[#0a6699] font-bold uppercase">
-                RSVP Confirmation
+              <span className="text-[11px] font-khmer tracking-wider text-[#0a6699] font-bold uppercase">
+                ការឆ្លើយតបចូលរួម (RSVP)
               </span>
-              <h3 className="font-serif-elegant italic text-2xl text-slate-800">
-                Ponleu &amp; Meyjing
+              <h3 className="font-moul text-xl text-slate-800 mt-0.5">
+                ពន្លឺ &amp; ម៉ីជីង
               </h3>
             </div>
             <button
@@ -110,7 +110,7 @@ export const RsvpModal: React.FC<RsvpModalProps> = ({
           </div>
 
           {/* Content Body */}
-          <div className="p-6 overflow-y-auto">
+          <div className="p-6 overflow-y-auto font-khmer">
             {isSubmitted ? (
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -167,16 +167,16 @@ export const RsvpModal: React.FC<RsvpModalProps> = ({
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <span className="text-[11px] font-sans-clean font-bold tracking-[0.2em] text-[#0a6699] uppercase block mb-1">
-                    🎉 Celebration Confirmed
+                  <span className="text-[11px] font-khmer font-bold tracking-wider text-[#0a6699] uppercase block mb-1">
+                    🎉 បានកត់ត្រាការចូលរួមដោយជោគជ័យ
                   </span>
-                  <h4 className="font-serif-elegant text-3xl text-slate-800 mb-2">
-                    Thank You, {name}!
+                  <h4 className="font-moul text-xl sm:text-2xl text-slate-800 mb-2 leading-relaxed">
+                    សូមអរគុណយ៉ាងជ្រាលជ្រៅ, {name}!
                   </h4>
-                  <p className="text-sm text-slate-600 max-w-sm mx-auto mb-6 leading-relaxed">
+                  <p className="text-sm text-slate-600 max-w-sm mx-auto mb-6 leading-relaxed font-khmer">
                     {attendance === 'attending'
-                      ? `Your RSVP for ${guestsCount} guest${guestsCount > 1 ? 's' : ''} has been joyfully recorded. Ponleu and Meyjing eagerly look forward to welcoming you on Tuesday, August 17, 2027!`
-                      : `Your response has been noted. Ponleu and Meyjing deeply appreciate your warm wishes and blessings from afar!`}
+                      ? `ការឆ្លើយតបសម្រាប់ភ្ញៀវកិត្តិយស ${guestsCount} រូប ត្រូវបានកត់ត្រារួចរាល់។ ពន្លឺ និង ម៉ីជីង ទន្ទឹងរង់ចាំទទួលស្វាគមន៍លោកអ្នកយ៉ាងកក់ក្តៅនៅថ្ងៃអង្គារ ទី១៧ ខែសីហា ឆ្នាំ២០២៧!`
+                      : `យើងខ្ញុំបានកត់ត្រាការឆ្លើយតបរួចរាល់។ ពន្លឺ និង ម៉ីជីង សូមថ្លែងអំណរគុណយ៉ាងជ្រាលជ្រៅចំពោះពរជ័យ និងសេចក្តីរាប់អានពីចម្ងាយ!`}
                   </p>
                 </motion.div>
 
@@ -186,39 +186,38 @@ export const RsvpModal: React.FC<RsvpModalProps> = ({
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={handleReplayConfetti}
-                    className="px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-900 text-xs font-sans-clean font-bold tracking-wider shadow-sm flex items-center justify-center gap-1.5 transition-all"
+                    className="px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-900 text-xs font-khmer font-bold tracking-wide shadow-sm flex items-center justify-center gap-1.5 transition-all"
                   >
                     <Sparkles className="w-3.5 h-3.5" />
-                    <span>Replay Confetti 🎊</span>
+                    <span>បាញ់កាំជ្រួចអបអរម្តងទៀត 🎊</span>
                   </motion.button>
 
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={onViewGuestbook}
-                    className="px-5 py-2.5 rounded-full bg-[#1289dc] hover:bg-[#0c7ac6] text-white text-xs font-sans-clean font-bold tracking-wider shadow-sm flex items-center justify-center gap-2 transition-all"
+                    className="px-5 py-2.5 rounded-full bg-[#1289dc] hover:bg-[#0c7ac6] text-white text-xs font-khmer font-bold tracking-wide shadow-sm flex items-center justify-center gap-2 transition-all"
                   >
                     <Heart className="w-3.5 h-3.5" />
-                    <span>View Guestbook Wishes</span>
+                    <span>មើលសៀវភៅជូនពរ</span>
                   </motion.button>
 
                   <button
                     onClick={handleReset}
-                    className="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-sans-clean font-medium transition-all"
+                    className="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-khmer font-medium transition-all"
                   >
-                    Done
+                    រួចរាល់
                   </button>
                 </div>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
-                <p className="text-xs text-slate-500 leading-relaxed font-sans-clean">
-                  Kindly respond by <strong className="text-slate-700">August 1st, 2027</strong> to
-                  help us prepare seating and celebratory refreshments for this joyful evening.
+                <p className="text-xs text-slate-500 leading-relaxed font-khmer">
+                  សូមមេត្តាឆ្លើយតបមុនថ្ងៃទី <strong className="text-slate-700 font-bold">០១ ខែសីហា ឆ្នាំ២០២៧</strong> ដើម្បីជួយយើងខ្ញុំក្នុងការរៀបចំកន្លែងអង្គុយ និងទទួលបដិសណ្ឋារកិច្ចឱ្យបានសមរម្យបំផុត។
                 </p>
 
                 {error && (
-                  <div className="p-3 bg-red-50 text-red-600 text-xs rounded-xl flex items-center gap-2 border border-red-100">
+                  <div className="p-3 bg-red-50 text-red-600 text-xs rounded-xl flex items-center gap-2 border border-red-100 font-khmer">
                     <AlertCircle className="w-4 h-4 shrink-0" />
                     <span>{error}</span>
                   </div>
@@ -226,50 +225,50 @@ export const RsvpModal: React.FC<RsvpModalProps> = ({
 
                 {/* Attendance Choice */}
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-2 font-sans-clean uppercase tracking-wider">
-                    Will you be attending? *
+                  <label className="block text-xs font-semibold text-slate-700 mb-2 font-khmer uppercase tracking-wider">
+                    តើលោកអ្នកអាចអញ្ជើញចូលរួមបានទេ? *
                   </label>
                   <div className="grid grid-cols-2 gap-3">
                     <button
                       type="button"
                       onClick={() => setAttendance('attending')}
-                      className={`py-3 px-4 rounded-xl border text-center transition-all flex flex-col items-center justify-center gap-1 ${
+                      className={`py-3 px-4 rounded-xl border text-center transition-all flex flex-col items-center justify-center gap-1 font-khmer ${
                         attendance === 'attending'
                           ? 'border-[#1289dc] bg-[#ebf7fd] text-[#0d7bb8] font-bold shadow-xs scale-[1.01]'
                           : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'
                       }`}
                     >
-                      <span className="text-sm font-sans-clean">✨ Joyfully Accepts</span>
-                      <span className="text-[10px] text-slate-500">I will celebrate in person</span>
+                      <span className="text-sm font-bold">✨ រីករាយចូលរួម</span>
+                      <span className="text-[10px] text-slate-500">ខ្ញុំនឹងចូលរួមដោយផ្ទាល់</span>
                     </button>
 
                     <button
                       type="button"
                       onClick={() => setAttendance('declined')}
-                      className={`py-3 px-4 rounded-xl border text-center transition-all flex flex-col items-center justify-center gap-1 ${
+                      className={`py-3 px-4 rounded-xl border text-center transition-all flex flex-col items-center justify-center gap-1 font-khmer ${
                         attendance === 'declined'
                           ? 'border-slate-500 bg-slate-100 text-slate-800 font-bold shadow-xs scale-[1.01]'
                           : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'
                       }`}
                     >
-                      <span className="text-sm font-sans-clean">💌 Regretfully Declines</span>
-                      <span className="text-[10px] text-slate-500">Sending love from afar</span>
+                      <span className="text-sm font-bold">💌 សុំអភ័យទោស</span>
+                      <span className="text-[10px] text-slate-500">ផ្ញើក្តីស្រឡាញ់ពីចម្ងាយ</span>
                     </button>
                   </div>
                 </div>
 
                 {/* Guest Full Name */}
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5 font-sans-clean">
-                    Your Full Name *
+                  <label className="block text-xs font-semibold text-slate-700 mb-1.5 font-khmer">
+                    ឈ្មោះពេញរបស់លោកអ្នក *
                   </label>
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Sothea Chan / Sokha &amp; Family"
+                    placeholder="ឧ. សុខា និងក្រុមគ្រួសារ / លោក វិបុល"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:border-[#1289dc] focus:ring-2 focus:ring-sky-100 text-sm outline-none transition-all"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:border-[#1289dc] focus:ring-2 focus:ring-sky-100 text-sm outline-none transition-all font-khmer"
                   />
                 </div>
 
@@ -278,65 +277,65 @@ export const RsvpModal: React.FC<RsvpModalProps> = ({
                   <>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-xs font-semibold text-slate-700 mb-1.5 font-sans-clean">
-                          Number of Attending Guests
+                        <label className="block text-xs font-semibold text-slate-700 mb-1.5 font-khmer">
+                          ចំនួនអ្នកចូលរួម (រាប់ទាំងលោកអ្នក)
                         </label>
                         <select
                           value={guestsCount}
                           onChange={(e) => setGuestsCount(Number(e.target.value))}
-                          className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:border-[#1289dc] focus:ring-2 focus:ring-sky-100 text-sm outline-none bg-white"
+                          className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:border-[#1289dc] focus:ring-2 focus:ring-sky-100 text-sm outline-none bg-white font-khmer"
                         >
-                          <option value={1}>1 Guest (Just me)</option>
-                          <option value={2}>2 Guests (Me + Plus one)</option>
-                          <option value={3}>3 Guests</option>
-                          <option value={4}>4 Guests (Family table)</option>
-                          <option value={5}>5+ Guests</option>
+                          <option value={1}>១ នាក់ (រូបខ្ញុំផ្ទាល់)</option>
+                          <option value={2}>២ នាក់ (ខ្ញុំ និងដៃគូ)</option>
+                          <option value={3}>៣ នាក់</option>
+                          <option value={4}>៤ នាក់ (តុគ្រួសារ)</option>
+                          <option value={5}>៥ នាក់ឡើងទៅ</option>
                         </select>
                       </div>
 
                       <div>
-                        <label className="block text-xs font-semibold text-slate-700 mb-1.5 font-sans-clean">
-                          Phone or Telegram
+                        <label className="block text-xs font-semibold text-slate-700 mb-1.5 font-khmer">
+                          លេខទូរស័ព្ទ ឬ Telegram
                         </label>
                         <input
                           type="text"
-                          placeholder="e.g. 012 345 678"
+                          placeholder="ឧ. 012 345 678"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
-                          className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:border-[#1289dc] focus:ring-2 focus:ring-sky-100 text-sm outline-none transition-all"
+                          className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:border-[#1289dc] focus:ring-2 focus:ring-sky-100 text-sm outline-none transition-all font-khmer"
                         />
                       </div>
                     </div>
 
                     {/* Relationship */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-700 mb-1.5 font-sans-clean">
-                        Relation to the Couple
+                      <label className="block text-xs font-semibold text-slate-700 mb-1.5 font-khmer">
+                        ទំនាក់ទំនងជាមួយគូដណ្តប់
                       </label>
                       <select
                         value={relationship}
                         onChange={(e) => setRelationship(e.target.value as RsvpSubmission['relationship'])}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:border-[#1289dc] focus:ring-2 focus:ring-sky-100 text-sm outline-none bg-white"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:border-[#1289dc] focus:ring-2 focus:ring-sky-100 text-sm outline-none bg-white font-khmer"
                       >
-                        <option value="bride_friend">Friend of Meyjing (Bride)</option>
-                        <option value="groom_friend">Friend of Ponleu (Groom)</option>
-                        <option value="bride_family">Family of Bride</option>
-                        <option value="groom_family">Family of Groom</option>
-                        <option value="colleague">Colleague / Work Partner</option>
-                        <option value="other">Mutual Friend / Honored Guest</option>
+                        <option value="bride_friend">មិត្តភក្តិកូនក្រមុំ (ម៉ីជីង)</option>
+                        <option value="groom_friend">មិត្តភក្តិកូនកំលោះ (ពន្លឺ)</option>
+                        <option value="bride_family">សាច់ញាតិខាងស្រី</option>
+                        <option value="groom_family">សាច់ញាតិខាងប្រុស</option>
+                        <option value="colleague">មិត្តរួមការងារ</option>
+                        <option value="other">ភ្ញៀវកិត្តិយស</option>
                       </select>
                     </div>
 
                     {/* Dietary Requirements */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-700 mb-1.5 font-sans-clean">
-                        Dietary Preferences
+                      <label className="block text-xs font-semibold text-slate-700 mb-1.5 font-khmer">
+                        ចំណូលចិត្តអាហារ
                       </label>
-                      <div className="grid grid-cols-3 gap-2 text-xs">
+                      <div className="grid grid-cols-3 gap-2 text-xs font-khmer">
                         {[
-                          { id: 'none', label: 'No Restriction' },
-                          { id: 'vegetarian', label: 'Vegetarian' },
-                          { id: 'halal', label: 'Halal' },
+                          { id: 'none', label: 'ទូទៅ (មិនតម)' },
+                          { id: 'vegetarian', label: 'អាហារបួស' },
+                          { id: 'halal', label: 'អាហារហាឡាល់' },
                         ].map((item) => (
                           <button
                             key={item.id}
@@ -358,16 +357,16 @@ export const RsvpModal: React.FC<RsvpModalProps> = ({
 
                 {/* Congratulatory Message / Blessing */}
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5 font-sans-clean flex items-center justify-between">
-                    <span>Blessing &amp; Message for Ponleu &amp; Meyjing</span>
-                    <span className="text-[10px] text-slate-400 font-normal">Will appear in guestbook</span>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1.5 font-khmer flex items-center justify-between">
+                    <span>ពាក្យជូនពរដល់ ពន្លឺ &amp; ម៉ីជីង</span>
+                    <span className="text-[10px] text-slate-400 font-normal">នឹងបង្ហាញលើសៀវភៅជូនពរ</span>
                   </label>
                   <textarea
                     rows={3}
-                    placeholder="Share your warm congratulations, wishes, or blessings for the couple..."
+                    placeholder="សូមសរសេរពាក្យជូនពរ និងក្តីស្រឡាញ់របស់លោកអ្នកដល់គូដណ្តប់..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:border-[#1289dc] focus:ring-2 focus:ring-sky-100 text-sm outline-none transition-all resize-none"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:border-[#1289dc] focus:ring-2 focus:ring-sky-100 text-sm outline-none transition-all resize-none font-khmer"
                   />
                 </div>
 
@@ -377,10 +376,10 @@ export const RsvpModal: React.FC<RsvpModalProps> = ({
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     type="submit"
-                    className="w-full py-3.5 px-6 rounded-full bg-[#1289dc] hover:bg-[#0c7ac6] text-white font-sans-clean font-bold text-xs tracking-[0.2em] shadow-md shadow-sky-500/25 flex items-center justify-center gap-2 transition-all cursor-pointer animate-shimmer-btn"
+                    className="w-full py-3.5 px-6 rounded-full bg-[#1289dc] hover:bg-[#0c7ac6] text-white font-khmer font-bold text-sm tracking-wide shadow-md shadow-sky-500/25 flex items-center justify-center gap-2 transition-all cursor-pointer animate-shimmer-btn"
                   >
                     <Send className="w-3.5 h-3.5" />
-                    <span>SUBMIT RSVP</span>
+                    <span>ផ្ញើការឆ្លើយតបចូលរួម</span>
                   </motion.button>
                 </div>
               </form>

@@ -45,30 +45,30 @@ export const GiftRegistryModal: React.FC<GiftRegistryModalProps> = ({
   const bankOptions = [
     {
       id: 'aba-usd',
-      bankName: 'ABA Bank (KHQR / USD)',
+      bankName: 'ABA Bank (KHQR / ដុល្លារ)',
       accountName: 'PONLEU & MEYJING',
       accountNumber: '001 829 402',
       currency: 'USD ($)',
       color: 'from-[#004f71] to-[#01354c]',
-      badge: 'Most Popular',
+      badge: 'ពេញនិយមបំផុត',
     },
     {
       id: 'aba-khr',
-      bankName: 'ABA Bank (KHQR / KHR)',
+      bankName: 'ABA Bank (KHQR / ប្រាក់រៀល)',
       accountName: 'PONLEU & MEYJING',
       accountNumber: '001 829 403',
       currency: 'KHR (៛)',
       color: 'from-[#006080] to-[#004258]',
-      badge: 'Khmer Riel',
+      badge: 'ប្រាក់រៀលខ្មែរ',
     },
     {
       id: 'acleda',
-      bankName: 'ACLEDA Bank Plc',
+      bankName: 'ធនាគារ អេស៊ីលីដា ភីអិលស៊ី',
       accountName: 'PONLEU & MEYJING',
       accountNumber: '1200-8899-4455',
       currency: 'USD / KHR',
       color: 'from-[#154c79] to-[#0f3453]',
-      badge: 'Local Transfer',
+      badge: 'ផ្ទេរប្រាក់ក្នុងស្រុក',
     },
   ];
 
@@ -76,29 +76,29 @@ export const GiftRegistryModal: React.FC<GiftRegistryModalProps> = ({
     {
       id: 'honeymoon',
       icon: Plane,
-      title: 'Honeymoon Journey Fund',
-      subtitle: 'Siem Reap & Island Getaway',
-      description: 'Contribute toward our romantic sunset dinner and island retreat memories.',
-      status: 'Open for Blessings',
-      tag: 'Experience',
+      title: 'មូលនិធិដំណើរកម្សាន្តក្រេបចន្ទទឹកឃ្មុំ',
+      subtitle: 'ដំណើរកម្សាន្តសៀមរាប និងតំបន់កោះ',
+      description: 'ចូលរួមចំណែកសម្រាប់អាហារពេលល្ងាចរ៉ូមែនទិក និងការចងចាំដ៏ផ្អែមល្ហែមនៃដំណើរកម្សាន្តរបស់យើងខ្ញុំ។',
+      status: 'បើកទទួលពរជ័យ',
+      tag: 'បទពិសោធន៍',
     },
     {
       id: 'home',
       icon: Home,
-      title: 'New Home & Living Registry',
-      subtitle: 'Home Decor & Kitchen Appliances',
-      description: 'Placeholder wishlist for cozy home furnishings and kitchen essentials.',
-      status: 'View Wishlist',
-      tag: 'Home',
+      title: 'អំណោយគេហដ្ឋានថ្មី & សម្ភារៈប្រើប្រាស់',
+      subtitle: 'សម្ភារៈផ្ទះបាយ និងការតុបតែងផ្ទះ',
+      description: 'ការចូលរួមចំណែកសម្រាប់កសាងគេហដ្ឋានថ្មីដ៏កក់ក្តៅ និងឧបករណ៍ប្រើប្រាស់ក្នុងផ្ទះ។',
+      status: 'មើលបញ្ជីកាដូ',
+      tag: 'គេហដ្ឋាន',
     },
     {
       id: 'giftcard',
       icon: ShoppingBag,
-      title: 'Aeon Mall Phnom Penh Gift Card',
-      subtitle: 'Sen Sok & Riverside Centers',
-      description: 'Gift cards for celebration dining, lifestyle, and home necessities.',
-      status: 'Gift Cards',
-      tag: 'Shopping',
+      title: 'ប័ណ្ណអំណោយផ្សារទំនើបអ៊ីអន (Aeon Mall)',
+      subtitle: 'សាខាសែនសុខ និងភ្នំពេញ',
+      description: 'ប័ណ្ណអំណោយសម្រាប់អាហារ ការទិញទំនិញ និងសម្ភារៈប្រើប្រាស់ក្នុងជីវភាពប្រចាំថ្ងៃ។',
+      status: 'ប័ណ្ណអំណោយ',
+      tag: 'ការទិញទំនិញ',
     },
   ];
 
@@ -110,21 +110,21 @@ export const GiftRegistryModal: React.FC<GiftRegistryModalProps> = ({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 10 }}
           transition={{ type: 'spring', damping: 25, stiffness: 350 }}
-          className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-sky-100 overflow-hidden max-h-[90vh] flex flex-col"
+          className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-sky-100 overflow-hidden max-h-[90vh] flex flex-col font-khmer"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-[#eaf5fc] via-[#dcedf8] to-[#e4f1fa] px-6 py-4 flex items-center justify-between border-b border-sky-100">
+          <div className="bg-gradient-to-r from-[#eaf5fc] via-[#dcedf8] to-[#e4f1fa] px-6 py-4 flex items-center justify-between border-b border-sky-100 font-khmer">
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-full bg-white text-[#0a6699] flex items-center justify-center shadow-xs">
                 <Gift className="w-4 h-4" />
               </div>
               <div>
-                <span className="text-[10px] font-sans-clean tracking-[0.2em] text-[#0a6699] font-bold uppercase">
-                  Wedding Blessings &amp; Registry
+                <span className="text-[10px] font-khmer tracking-wider text-[#0a6699] font-bold uppercase">
+                  អំណោយ និងការជូនពរ
                 </span>
-                <h3 className="font-serif-elegant italic text-2xl text-slate-800 leading-none">
-                  Ponleu &amp; Meyjing
+                <h3 className="font-moul text-lg text-slate-800 leading-normal mt-0.5">
+                  ពន្លឺ &amp; ម៉ីជីង
                 </h3>
               </div>
             </div>
@@ -137,38 +137,38 @@ export const GiftRegistryModal: React.FC<GiftRegistryModalProps> = ({
           </div>
 
           {/* Subheader message */}
-          <div className="px-6 pt-4 pb-2 bg-slate-50/50 border-b border-slate-100 text-center">
+          <div className="px-6 pt-4 pb-2 bg-slate-50/50 border-b border-slate-100 text-center font-khmer">
             <p className="text-xs text-slate-600 leading-relaxed max-w-md mx-auto">
-              “Your presence at our engagement celebration is the greatest gift of all. For beloved guests wishing to send a blessing or gift, we have provided options below.”
+              «វត្តមានដ៏ថ្លៃថ្លារបស់លោកអ្នកក្នុងពិធីភ្ជាប់ពាក្យរបស់យើងខ្ញុំ គឺជាកាដូដ៏មានតម្លៃបំផុត។ សម្រាប់ភ្ញៀវកិត្តិយសដែលមានបំណងផ្ញើពរជ័យ ឬអំណោយ យើងខ្ញុំបានរៀបចំជម្រើសដូចខាងក្រោម។»
             </p>
 
             {/* Tab switchers */}
-            <div className="flex justify-center gap-2 mt-3">
+            <div className="flex justify-center gap-2 mt-3 font-khmer">
               <button
                 onClick={() => setActiveTab('banking')}
-                className={`py-1.5 px-4 rounded-full text-xs font-sans-clean font-bold transition-all ${
+                className={`py-1.5 px-4 rounded-full text-xs font-khmer font-bold transition-all ${
                   activeTab === 'banking'
                     ? 'bg-[#1289dc] text-white shadow-xs'
                     : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
                 }`}
               >
-                🏦 Bank Transfer / KHQR
+                🏦 ផ្ទេរប្រាក់តាមធនាគារ / KHQR
               </button>
               <button
                 onClick={() => setActiveTab('registry')}
-                className={`py-1.5 px-4 rounded-full text-xs font-sans-clean font-bold transition-all ${
+                className={`py-1.5 px-4 rounded-full text-xs font-khmer font-bold transition-all ${
                   activeTab === 'registry'
                     ? 'bg-[#1289dc] text-white shadow-xs'
                     : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
                 }`}
               >
-                🎁 Gift Wishlists &amp; Funds
+                🎁 មូលនិធិ និងកាដូជូនពរ
               </button>
             </div>
           </div>
 
           {/* Content Body */}
-          <div className="p-6 overflow-y-auto space-y-4">
+          <div className="p-6 overflow-y-auto space-y-4 font-khmer">
             {activeTab === 'banking' ? (
               <div className="space-y-3.5">
                 {/* QR Code Scan Card */}
@@ -196,14 +196,14 @@ export const GiftRegistryModal: React.FC<GiftRegistryModalProps> = ({
                   </div>
 
                   <div className="min-w-0">
-                    <span className="text-[10px] font-sans-clean uppercase font-bold text-[#0a6699] tracking-wider block">
-                      Universal KHQR Scan
+                    <span className="text-[10px] font-khmer uppercase font-bold text-[#0a6699] tracking-wider block">
+                      ស្កេនទូទាត់ជាមួយ KHQR
                     </span>
-                    <h4 className="font-serif-elegant font-semibold text-slate-800 text-base leading-tight">
-                      Scan with any Cambodian Banking App
+                    <h4 className="font-moul font-normal text-slate-800 text-sm sm:text-base leading-normal">
+                      ស្កេនជាមួយគ្រប់កម្មវិធីធនាគារនៅកម្ពុជា
                     </h4>
-                    <p className="text-[11px] text-slate-500 mt-1 leading-snug">
-                      Supports Bakong, ABA, ACLEDA, Wing, Canadia, and all KHQR member banks.
+                    <p className="text-[11px] text-slate-500 mt-1 leading-snug font-khmer">
+                      គាំទ្របាគង (Bakong), ABA, អេស៊ីលីដា, វីង, កាណាឌីយ៉ា និងធនាគារសមាជិកទាំងអស់។
                     </p>
                   </div>
                 </div>
@@ -217,35 +217,35 @@ export const GiftRegistryModal: React.FC<GiftRegistryModalProps> = ({
                     >
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2">
-                          <span className="font-sans-clean font-bold text-xs text-slate-800">
+                          <span className="font-khmer font-bold text-xs text-slate-800">
                             {bank.bankName}
                           </span>
-                          <span className="text-[9px] font-sans-clean px-2 py-0.5 rounded-full bg-sky-50 text-[#096e9f] font-semibold border border-sky-100">
-                            {bank.currency}
+                          <span className="text-[9px] font-khmer px-2 py-0.5 rounded-full bg-sky-50 text-[#096e9f] font-semibold border border-sky-100">
+                            {bank.badge}
                           </span>
                         </div>
                         <div className="font-mono text-sm font-bold text-[#0d7bb8] tracking-wider mt-1">
                           {bank.accountNumber}
                         </div>
-                        <div className="text-[11px] text-slate-500 font-sans-clean">
-                          Account Name: <strong className="text-slate-700">{bank.accountName}</strong>
+                        <div className="text-[11px] text-slate-500 font-khmer">
+                          ឈ្មោះគណនី: <strong className="text-slate-700">{bank.accountName}</strong>
                         </div>
                       </div>
 
                       <button
                         onClick={() => handleCopy(bank.accountNumber, bank.id)}
-                        className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-[#ebf7fd] hover:text-[#0d7bb8] text-slate-700 text-xs font-sans-clean font-semibold flex items-center gap-1.5 transition-all shrink-0 active:scale-95"
-                        title="Copy account number"
+                        className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-[#ebf7fd] hover:text-[#0d7bb8] text-slate-700 text-xs font-khmer font-semibold flex items-center gap-1.5 transition-all shrink-0 active:scale-95"
+                        title="ចម្លងលេខគណនី"
                       >
                         {copiedAccount === bank.id ? (
                           <>
                             <Check className="w-3.5 h-3.5 text-emerald-600" />
-                            <span className="text-emerald-700">Copied</span>
+                            <span className="text-emerald-700 font-bold">បានចម្លង</span>
                           </>
                         ) : (
                           <>
                             <Copy className="w-3.5 h-3.5" />
-                            <span>Copy</span>
+                            <span>ចម្លងលេខ</span>
                           </>
                         )}
                       </button>
@@ -255,7 +255,7 @@ export const GiftRegistryModal: React.FC<GiftRegistryModalProps> = ({
               </div>
             ) : (
               /* Gift Registry / Wishlists */
-              <div className="space-y-3">
+              <div className="space-y-3 font-khmer">
                 {registryItems.map((item) => {
                   const Icon = item.icon;
                   return (
@@ -268,17 +268,17 @@ export const GiftRegistryModal: React.FC<GiftRegistryModalProps> = ({
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between">
-                          <h4 className="font-serif-elegant font-semibold text-slate-800 text-base leading-tight">
+                          <h4 className="font-moul font-normal text-slate-800 text-sm leading-normal">
                             {item.title}
                           </h4>
-                          <span className="text-[9px] font-sans-clean font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">
+                          <span className="text-[9px] font-khmer font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">
                             {item.tag}
                           </span>
                         </div>
-                        <p className="text-xs font-medium text-[#0a6699] mt-0.5">
+                        <p className="text-xs font-medium text-[#0a6699] mt-0.5 font-khmer">
                           {item.subtitle}
                         </p>
-                        <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
+                        <p className="text-[11px] text-slate-500 mt-1 leading-relaxed font-khmer">
                           {item.description}
                         </p>
 
@@ -288,9 +288,9 @@ export const GiftRegistryModal: React.FC<GiftRegistryModalProps> = ({
                               onClose();
                               onOpenGuestbook();
                             }}
-                            className="inline-flex items-center gap-1 text-xs font-sans-clean font-bold text-[#1289dc] hover:underline"
+                            className="inline-flex items-center gap-1 text-xs font-khmer font-bold text-[#1289dc] hover:underline"
                           >
-                            <span>Send a Warm Blessing Note →</span>
+                            <span>ផ្ញើសារជូនពរដ៏កក់ក្តៅ →</span>
                           </button>
                         </div>
                       </div>

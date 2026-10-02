@@ -21,7 +21,7 @@ export const GuestbookModal: React.FC<GuestbookModalProps> = ({
   onOpenRsvp,
 }) => {
   const [name, setName] = useState('');
-  const [relationship, setRelationship] = useState('Friend');
+  const [relationship, setRelationship] = useState('មិត្តភក្តិ');
   const [message, setMessage] = useState('');
   const [hasPosted, setHasPosted] = useState(false);
 
@@ -50,21 +50,21 @@ export const GuestbookModal: React.FC<GuestbookModalProps> = ({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 10 }}
           transition={{ type: 'spring', damping: 25, stiffness: 350 }}
-          className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-sky-100 overflow-hidden max-h-[90vh] flex flex-col"
+          className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-sky-100 overflow-hidden max-h-[90vh] flex flex-col font-khmer"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-[#eaf5fc] via-[#dcedf8] to-[#e4f1fa] px-6 py-4 flex items-center justify-between border-b border-sky-100">
+          <div className="bg-gradient-to-r from-[#eaf5fc] via-[#dcedf8] to-[#e4f1fa] px-6 py-4 flex items-center justify-between border-b border-sky-100 font-khmer">
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-full bg-white text-[#0a6699] flex items-center justify-center shadow-xs">
                 <Heart className="w-4 h-4 fill-sky-200 text-[#0a6699]" />
               </div>
               <div>
-                <span className="text-[10px] font-sans-clean tracking-[0.2em] text-[#0a6699] font-bold uppercase">
-                  Warm Blessings Wall
+                <span className="text-[10px] font-khmer tracking-wider text-[#0a6699] font-bold uppercase">
+                  ផ្ទាំងពរជ័យមង្គល
                 </span>
-                <h3 className="font-serif-elegant italic text-2xl text-slate-800 leading-none">
-                  Guestbook Wishes
+                <h3 className="font-moul text-lg text-slate-800 leading-normal mt-0.5">
+                  សៀវភៅជូនពរ
                 </h3>
               </div>
             </div>
@@ -77,12 +77,12 @@ export const GuestbookModal: React.FC<GuestbookModalProps> = ({
           </div>
 
           {/* Content Body */}
-          <div className="p-6 overflow-y-auto space-y-5">
+          <div className="p-6 overflow-y-auto space-y-5 font-khmer">
             {/* Quick Post Box */}
-            <form onSubmit={handleSubmit} className="p-4 rounded-2xl bg-[#f0f8fd] border border-[#bfe3f7] space-y-3">
+            <form onSubmit={handleSubmit} className="p-4 rounded-2xl bg-[#f0f8fd] border border-[#bfe3f7] space-y-3 font-khmer">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold font-sans-clean text-[#096e9f] uppercase tracking-wider">
-                  Leave a Blessing for the Couple
+                <span className="text-xs font-bold font-khmer text-[#096e9f] uppercase tracking-wider">
+                  សរសេរពាក្យជូនពរដល់គូដណ្តប់
                 </span>
                 <button
                   type="button"
@@ -90,9 +90,9 @@ export const GuestbookModal: React.FC<GuestbookModalProps> = ({
                     onClose();
                     onOpenRsvp();
                   }}
-                  className="text-[11px] font-sans-clean text-[#0d7bb8] hover:underline font-semibold"
+                  className="text-[11px] font-khmer text-[#0d7bb8] hover:underline font-semibold"
                 >
-                  RSVP Attendance →
+                  ឆ្លើយតបចូលរួម (RSVP) →
                 </button>
               </div>
 
@@ -100,41 +100,41 @@ export const GuestbookModal: React.FC<GuestbookModalProps> = ({
                 <input
                   type="text"
                   required
-                  placeholder="Your Name"
+                  placeholder="ឈ្មោះរបស់លោកអ្នក"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl bg-white border border-sky-200 text-xs outline-none focus:ring-2 focus:ring-sky-200"
+                  className="w-full px-3 py-2 rounded-xl bg-white border border-sky-200 text-xs outline-none focus:ring-2 focus:ring-sky-200 font-khmer"
                 />
                 <select
                   value={relationship}
                   onChange={(e) => setRelationship(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl bg-white border border-sky-200 text-xs outline-none focus:ring-2 focus:ring-sky-200"
+                  className="w-full px-3 py-2 rounded-xl bg-white border border-sky-200 text-xs outline-none focus:ring-2 focus:ring-sky-200 font-khmer"
                 >
-                  <option value="Friend of Couple">Friend</option>
-                  <option value="Family of Meyjing">Bride's Family</option>
-                  <option value="Family of Ponleu">Groom's Family</option>
-                  <option value="Colleague">Colleague</option>
-                  <option value="Well-wisher">Well-wisher</option>
+                  <option value="មិត្តភក្តិ">មិត្តភក្តិ</option>
+                  <option value="សាច់ញាតិខាងស្រី">សាច់ញាតិខាងស្រី</option>
+                  <option value="សាច់ញាតិខាងប្រុស">សាច់ញាតិខាងប្រុស</option>
+                  <option value="មិត្តរួមការងារ">មិត្តរួមការងារ</option>
+                  <option value="ភ្ញៀវកិត្តិយស">ភ្ញៀវកិត្តិយស</option>
                 </select>
               </div>
 
               <textarea
                 required
                 rows={2}
-                placeholder="Write your heartfelt congratulations or blessing..."
+                placeholder="សូមសរសេរពាក្យជូនពរ និងក្តីស្រឡាញ់របស់លោកអ្នក..."
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl bg-white border border-sky-200 text-xs outline-none focus:ring-2 focus:ring-sky-200 resize-none"
+                className="w-full px-3 py-2 rounded-xl bg-white border border-sky-200 text-xs outline-none focus:ring-2 focus:ring-sky-200 resize-none font-khmer"
               />
 
               <div className="flex items-center justify-between">
                 {hasPosted ? (
-                  <span className="text-xs font-sans-clean text-emerald-600 font-semibold animate-pulse">
-                    ✓ Blessing posted with love!
+                  <span className="text-xs font-khmer text-emerald-600 font-semibold animate-pulse">
+                    ✓ បានបង្ហោះសារជូនពរដោយជោគជ័យ!
                   </span>
                 ) : (
-                  <span className="text-[11px] text-slate-400">
-                    Shared on Ponleu &amp; Meyjing's board
+                  <span className="text-[11px] text-slate-400 font-khmer">
+                    បង្ហាញលើផ្ទាំងជូនពរ ពន្លឺ &amp; ម៉ីជីង
                   </span>
                 )}
 
@@ -142,18 +142,18 @@ export const GuestbookModal: React.FC<GuestbookModalProps> = ({
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   type="submit"
-                  className="px-4 py-2 rounded-full bg-[#1289dc] hover:bg-[#0c7ac6] text-white text-xs font-sans-clean font-bold tracking-wider flex items-center gap-1.5 shadow-2xs"
+                  className="px-4 py-2 rounded-full bg-[#1289dc] hover:bg-[#0c7ac6] text-white text-xs font-khmer font-bold tracking-wider flex items-center gap-1.5 shadow-2xs"
                 >
                   <Send className="w-3 h-3" />
-                  <span>Post Wish</span>
+                  <span>បង្ហោះពរជ័យ</span>
                 </motion.button>
               </div>
             </form>
 
             {/* Wishes List */}
-            <div className="space-y-3">
-              <h4 className="text-xs font-bold font-sans-clean text-slate-700 uppercase tracking-wider">
-                Recent Wishes ({wishes.length})
+            <div className="space-y-3 font-khmer">
+              <h4 className="text-xs font-bold font-khmer text-slate-700 uppercase tracking-wider">
+                សារជូនពរថ្មីៗ ({wishes.length})
               </h4>
 
               {wishes.map((w, index) => (
@@ -162,14 +162,14 @@ export const GuestbookModal: React.FC<GuestbookModalProps> = ({
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className="p-4 rounded-2xl bg-white border border-slate-100 shadow-2xs hover:border-sky-100 transition-all space-y-1.5"
+                  className="p-4 rounded-2xl bg-white border border-slate-100 shadow-2xs hover:border-sky-100 transition-all space-y-1.5 font-khmer"
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="font-serif-elegant font-semibold text-slate-800 text-base">
+                      <span className="font-moul font-normal text-slate-800 text-sm">
                         {w.name}
                       </span>
-                      <span className="text-[10px] font-sans-clean px-2 py-0.5 rounded-full bg-sky-50 text-[#096e9f] font-medium border border-sky-100">
+                      <span className="text-[10px] font-khmer px-2 py-0.5 rounded-full bg-sky-50 text-[#096e9f] font-medium border border-sky-100">
                         {w.relationship}
                       </span>
                     </div>
@@ -178,7 +178,7 @@ export const GuestbookModal: React.FC<GuestbookModalProps> = ({
                       whileTap={{ scale: 1.3 }}
                       onClick={() => onLikeWish(w.id)}
                       className="flex items-center gap-1 text-slate-400 hover:text-rose-500 transition-colors text-xs"
-                      title="Like this wish"
+                      title="ចុចចូលចិត្តសារនេះ"
                     >
                       <Heart
                         className={`w-3.5 h-3.5 ${
@@ -189,12 +189,12 @@ export const GuestbookModal: React.FC<GuestbookModalProps> = ({
                     </motion.button>
                   </div>
 
-                  <p className="text-xs text-slate-600 leading-relaxed font-sans-clean">
-                    "{w.message}"
+                  <p className="text-xs text-slate-600 leading-relaxed font-khmer">
+                    «{w.message}»
                   </p>
 
-                  <span className="text-[10px] text-slate-400 block pt-1 font-mono">
-                    {new Date(w.createdAt).toLocaleDateString(undefined, {
+                  <span className="text-[10px] text-slate-400 block pt-1 font-khmer">
+                    {new Date(w.createdAt).toLocaleDateString('km-KH', {
                       month: 'short',
                       day: 'numeric',
                       year: 'numeric',

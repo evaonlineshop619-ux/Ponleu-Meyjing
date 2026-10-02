@@ -46,11 +46,11 @@ export function calculateTimeLeft(): TimeLeft {
  * Generate Google Calendar URL
  */
 export function getGoogleCalendarUrl(): string {
-  const title = encodeURIComponent('Ponleu & Meyjing - Engagement Ceremony');
+  const title = encodeURIComponent('ពិធីភ្ជាប់ពាក្យ ពន្លឺ & ម៉ីជីង');
   const details = encodeURIComponent(
-    "Engagement Ceremony of Ponleu & Meyjing. Together with our families, we invite you to celebrate this blessed milestone with us.\n\nDress Code: Smart Formal / Pastel Blue or Traditional Khmer\nVenue: The bride's house, Phnom Penh City (Plus Code: GR4H+89W Phnom Penh)"
+    "សូមគោរពអញ្ជើញចូលរួមពិធីពិសាស្លាភ្ជាប់ពាក្យ ពន្លឺ & ម៉ីជីង។ រួមជាមួយមាតាបិតាទាំងសងខាង យើងខ្ញុំមានកិត្តិយសសូមគោរពអញ្ជើញលោកអ្នកចូលរួមក្នុងថ្ងៃដ៏មានសិរីមង្គលនេះ។\n\nសម្លៀកបំពាក់: ប្រពៃណីខ្មែរ ឬសមរម្យសម័យទំនើប (ពណ៌ផ្ទៃមេឃស្រាល / ស)\nទីតាំង: គេហដ្ឋានខាងស្រី រាជធានីភ្នំពេញ (កូដទីតាំង: GR4H+89W រាជធានីភ្នំពេញ)"
   );
-  const location = encodeURIComponent("The bride's house, GR4H+89W, Phnom Penh City, Cambodia");
+  const location = encodeURIComponent("គេហដ្ឋានខាងស្រី GR4H+89W រាជធានីភ្នំពេញ កម្ពុជា");
   // 20270817T130000Z to 20270817T170000Z (20:00 to 00:00 UTC+7)
   const dates = '20270817T130000Z/20270817T170000Z';
 
@@ -64,7 +64,7 @@ export function downloadIcsFile(): void {
   const icsContent = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Ponleu and Meyjing//Engagement Ceremony//EN',
+    'PRODID:-//Ponleu and Meyjing//Engagement Ceremony//KM',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
     'BEGIN:VEVENT',
@@ -72,9 +72,9 @@ export function downloadIcsFile(): void {
     'DTSTAMP:20261001T000000Z',
     'DTSTART:20270817T130000Z',
     'DTEND:20270817T170000Z',
-    'SUMMARY:Ponleu & Meyjing - Engagement Ceremony',
-    "DESCRIPTION:Together with our families, we joyfully invite you to the Engagement Ceremony of Ponleu & Meyjing.\\n\\nDress Code: Smart Formal / Pastel Blue or Traditional Khmer\\nMap Code: GR4H+89W Phnom Penh",
-    "LOCATION:The bride's house, GR4H+89W, Phnom Penh City, Cambodia",
+    'SUMMARY:ពិធីភ្ជាប់ពាក្យ ពន្លឺ & ម៉ីជីង',
+    "DESCRIPTION:សូមគោរពអញ្ជើញចូលរួមពិធីពិសាស្លាភ្ជាប់ពាក្យ ពន្លឺ & ម៉ីជីង នៅគេហដ្ឋានខាងស្រី រាជធានីភ្នំពេញ (កូដទីតាំង: GR4H+89W)\\n\\nសម្លៀកបំពាក់: សម្លៀកបំពាក់ប្រពៃណីខ្មែរ ឬសមរម្យសម័យទំនើប",
+    "LOCATION:គេហដ្ឋានខាងស្រី, GR4H+89W, រាជធានីភ្នំពេញ",
     'STATUS:CONFIRMED',
     'END:VEVENT',
     'END:VCALENDAR',

@@ -28,8 +28,8 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose }) => {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'Ponleu & Meyjing - Engagement Ceremony Invitation',
-          text: "You're invited to the Engagement Ceremony of Ponleu & Meyjing on Tuesday, August 17, 2027 in Phnom Penh.",
+          title: 'ពិធីភ្ជាប់ពាក្យ ពន្លឺ & ម៉ីជីង',
+          text: 'សូមគោរពអញ្ជើញចូលរួមពិធីពិសាស្លាភ្ជាប់ពាក្យ ពន្លឺ & ម៉ីជីង នៅថ្ងៃអង្គារ ទី១៧ ខែសីហា ឆ្នាំ២០២៧ នៅរាជធានីភ្នំពេញ។',
           url: currentUrl,
         });
       } catch {
@@ -48,15 +48,15 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose }) => {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 10 }}
           transition={{ type: 'spring', damping: 25, stiffness: 350 }}
-          className="relative w-full max-w-sm bg-white rounded-3xl shadow-2xl border border-sky-100 overflow-hidden max-h-[90vh] flex flex-col"
+          className="relative w-full max-w-sm bg-white rounded-3xl shadow-2xl border border-sky-100 overflow-hidden max-h-[90vh] flex flex-col font-khmer"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-[#eaf5fc] via-[#dcedf8] to-[#e4f1fa] px-6 py-4 flex items-center justify-between border-b border-sky-100">
+          <div className="bg-gradient-to-r from-[#eaf5fc] via-[#dcedf8] to-[#e4f1fa] px-6 py-4 flex items-center justify-between border-b border-sky-100 font-khmer">
             <div className="flex items-center gap-2">
               <Share2 className="w-4 h-4 text-[#0a6699]" />
-              <h3 className="font-serif-elegant italic text-xl text-slate-800">
-                Share Invitation
+              <h3 className="font-moul text-base text-slate-800 leading-normal">
+                ចែករំលែកលិខិតអញ្ជើញ
               </h3>
             </div>
             <button
@@ -68,7 +68,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose }) => {
           </div>
 
           {/* Content Body */}
-          <div className="p-6 text-center space-y-4">
+          <div className="p-6 text-center space-y-4 font-khmer">
             {/* Stylized QR Code */}
             <motion.div
               whileHover={{ scale: 1.03 }}
@@ -118,37 +118,37 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose }) => {
               </div>
             </motion.div>
 
-            <p className="text-xs text-slate-500 font-sans-clean">
-              Scan with smartphone camera to open the digital invitation card directly.
+            <p className="text-xs text-slate-500 font-khmer">
+              ស្កេនជាមួយកាមេរ៉ាទូរស័ព្ទដៃ ដើម្បីបើកមើលលិខិតអញ្ជើញឌីជីថលដោយផ្ទាល់។
             </p>
 
             {/* Share Actions */}
-            <div className="space-y-2 pt-2">
+            <div className="space-y-2 pt-2 font-khmer">
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={handleNativeShare}
-                className="w-full py-3 px-4 rounded-xl bg-[#1289dc] hover:bg-[#0c7ac6] text-white text-xs font-sans-clean font-bold tracking-wider flex items-center justify-center gap-2 shadow-xs transition-all"
+                className="w-full py-3 px-4 rounded-xl bg-[#1289dc] hover:bg-[#0c7ac6] text-white text-xs font-khmer font-bold tracking-wider flex items-center justify-center gap-2 shadow-xs transition-all"
               >
                 <Smartphone className="w-4 h-4" />
-                <span>Share via Phone Apps</span>
+                <span>ចែករំលែកតាមកម្មវិធីទូរស័ព្ទ</span>
               </motion.button>
 
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={handleCopy}
-                className="w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-sans-clean font-semibold flex items-center justify-center gap-2 transition-all"
+                className="w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-khmer font-semibold flex items-center justify-center gap-2 transition-all"
               >
                 {copied ? (
                   <>
                     <Check className="w-4 h-4 text-emerald-600" />
-                    <span className="text-emerald-700">Link Copied!</span>
+                    <span className="text-emerald-700 font-bold">បានចម្លងតំណភ្ជាប់!</span>
                   </>
                 ) : (
                   <>
                     <Copy className="w-4 h-4 text-slate-500" />
-                    <span>Copy Invitation Link</span>
+                    <span>ចម្លងតំណភ្ជាប់លិខិតអញ្ជើញ</span>
                   </>
                 )}
               </motion.button>
