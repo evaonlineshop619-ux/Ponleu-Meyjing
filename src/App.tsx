@@ -18,8 +18,8 @@ import {
   CheckCircle,
   Music,
   ExternalLink,
-  Gift,
   Camera,
+  Gift,
 } from 'lucide-react';
 import { InvitationCard } from './components/InvitationCard';
 import { RsvpModal } from './components/RsvpModal';
@@ -29,9 +29,9 @@ import { ScheduleModal } from './components/ScheduleModal';
 import { StoryGalleryModal } from './components/StoryGalleryModal';
 import { GuestbookModal } from './components/GuestbookModal';
 import { ShareModal } from './components/ShareModal';
-import { GiftRegistryModal } from './components/GiftRegistryModal';
 import { PhotoSlideshow } from './components/PhotoSlideshow';
 import { PhotoSlideshowModal } from './components/PhotoSlideshowModal';
+import { BankGiftModal } from './components/BankGiftModal';
 import { RsvpSubmission, GuestWish } from './types';
 
 const INITIAL_WISHES: GuestWish[] = [
@@ -78,8 +78,8 @@ export default function App() {
   const [isStoryOpen, setIsStoryOpen] = useState(false);
   const [isGuestbookOpen, setIsGuestbookOpen] = useState(false);
   const [isShareOpen, setIsShareOpen] = useState(false);
-  const [isGiftRegistryOpen, setIsGiftRegistryOpen] = useState(false);
   const [isSlideshowOpen, setIsSlideshowOpen] = useState(false);
+  const [isGiftOpen, setIsGiftOpen] = useState(false);
 
   // Desktop view toggle: phone frame preview vs expanded full view
   const [viewMode, setViewMode] = useState<'card' | 'expanded'>('card');
@@ -225,11 +225,12 @@ export default function App() {
           </button>
 
           <button
-            onClick={() => setIsGiftRegistryOpen(true)}
+            onClick={() => setIsGiftOpen(true)}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-sky-50 text-slate-700 text-xs font-khmer border border-sky-200 transition-all shadow-2xs"
+            title="QR Code & លេខកុងធនាគារ"
           >
-            <Gift className="w-3.5 h-3.5 text-amber-500" />
-            <span>អំណោយ</span>
+            <Gift className="w-3.5 h-3.5 text-[#0d7bb8]" />
+            <span>កាដូ</span>
           </button>
 
           <button
@@ -263,8 +264,8 @@ export default function App() {
               onOpenStory={() => setIsStoryOpen(true)}
               onOpenGuestbook={() => setIsGuestbookOpen(true)}
               onOpenShare={() => setIsShareOpen(true)}
-              onOpenGiftRegistry={() => setIsGiftRegistryOpen(true)}
               onOpenSlideshow={() => setIsSlideshowOpen(true)}
+              onOpenGift={() => setIsGiftOpen(true)}
               guestCount={totalGuestsAttending}
             />
           </div>
@@ -283,8 +284,8 @@ export default function App() {
                   onOpenStory={() => setIsStoryOpen(true)}
                   onOpenGuestbook={() => setIsGuestbookOpen(true)}
                   onOpenShare={() => setIsShareOpen(true)}
-                  onOpenGiftRegistry={() => setIsGiftRegistryOpen(true)}
                   onOpenSlideshow={() => setIsSlideshowOpen(true)}
+                  onOpenGift={() => setIsGiftOpen(true)}
                   guestCount={totalGuestsAttending}
                 />
               </div>
@@ -462,33 +463,6 @@ export default function App() {
                     </button>
                   </div>
                 </div>
-
-                {/* Gift Registry Showcase Banner in Desktop View */}
-                <div className="bg-gradient-to-r from-[#eaf5fc] via-[#dcedf8] to-[#e4f1fa] rounded-3xl p-5 shadow-sm border border-sky-200/70 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-11 h-11 rounded-2xl bg-white text-[#0a6699] flex items-center justify-center shadow-xs shrink-0">
-                      <Gift className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <span className="text-[10px] font-khmer font-bold uppercase tracking-wider text-[#0a6699]">
-                        អំណោយ និងការជូនពរ
-                      </span>
-                      <h4 className="font-moul text-sm text-slate-800 mt-0.5">
-                        ផ្ទេរប្រាក់តាមធនាគារ (KHQR)
-                      </h4>
-                      <p className="text-xs text-slate-600 font-khmer">
-                        ធនាគារ ABA, ធនាគារ អេស៊ីលីដា, Universal KHQR និងមូលនិធិក្រេបចន្ទទឹកឃ្មុំ។
-                      </p>
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => setIsGiftRegistryOpen(true)}
-                    className="px-4 py-2 rounded-full bg-[#1289dc] hover:bg-[#0c7ac6] text-white text-xs font-khmer font-bold tracking-wider shadow-xs transition-all shrink-0 flex items-center gap-1.5 active:scale-95"
-                  >
-                    <Gift className="w-3.5 h-3.5" />
-                    <span>មើលគណនីអំណោយ</span>
-                  </button>
-                </div>
               </div>
             </div>
           </div>
@@ -547,6 +521,11 @@ export default function App() {
       </footer>
 
       {/* Modals */}
+      <BankGiftModal
+        isOpen={isGiftOpen}
+        onClose={() => setIsGiftOpen(false)}
+      />
+
       <PhotoSlideshowModal
         isOpen={isSlideshowOpen}
         onClose={() => setIsSlideshowOpen(false)}
@@ -558,15 +537,6 @@ export default function App() {
         onSubmitRsvp={handleRsvpSubmit}
         onViewGuestbook={() => {
           setIsRsvpOpen(false);
-          setIsGuestbookOpen(true);
-        }}
-      />
-
-      <GiftRegistryModal
-        isOpen={isGiftRegistryOpen}
-        onClose={() => setIsGiftRegistryOpen(false)}
-        onOpenGuestbook={() => {
-          setIsGiftRegistryOpen(false);
           setIsGuestbookOpen(true);
         }}
       />

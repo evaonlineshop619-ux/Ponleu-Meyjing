@@ -12,8 +12,8 @@ import {
   BookOpen,
   Clock,
   Sparkles,
-  Gift,
   Camera,
+  Gift,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
@@ -32,8 +32,8 @@ interface InvitationCardProps {
   onOpenStory: () => void;
   onOpenGuestbook: () => void;
   onOpenShare: () => void;
-  onOpenGiftRegistry: () => void;
   onOpenSlideshow?: () => void;
+  onOpenGift?: () => void;
   guestCount?: number;
 }
 
@@ -45,8 +45,8 @@ export const InvitationCard: React.FC<InvitationCardProps> = ({
   onOpenStory,
   onOpenGuestbook,
   onOpenShare,
-  onOpenGiftRegistry,
   onOpenSlideshow,
+  onOpenGift,
 }) => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
   const [copiedCode, setCopiedCode] = useState(false);
@@ -195,20 +195,22 @@ export const InvitationCard: React.FC<InvitationCardProps> = ({
             </motion.button>
           )}
 
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={(e) => {
-              e.stopPropagation();
-              onOpenGiftRegistry();
-            }}
-            aria-label="អំណោយ និងកាដូ"
-            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white/70 hover:bg-white/95 backdrop-blur-md text-[#0d7bb8] text-xs font-medium shadow-xs border border-white/80 transition-colors"
-            title="អំណោយ និងការផ្ទេរប្រាក់ជូនពរ"
-          >
-            <Gift className="w-3.5 h-3.5 text-[#0d7bb8]" />
-            <span className="text-[11px] font-khmer font-semibold">អំណោយ</span>
-          </motion.button>
+          {onOpenGift && (
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={(e) => {
+                e.stopPropagation();
+                onOpenGift();
+              }}
+              aria-label="កាដូ និង QR ធនាគារ"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white/70 hover:bg-white/95 backdrop-blur-md text-[#0d7bb8] text-xs font-medium shadow-xs border border-white/80 transition-colors"
+              title="QR Code & លេខកុងធនាគារ"
+            >
+              <Gift className="w-3.5 h-3.5 text-[#0d7bb8]" />
+              <span className="text-[11px] font-khmer font-semibold">កាដូ</span>
+            </motion.button>
+          )}
 
           <motion.button
             whileHover={{ scale: 1.05 }}
