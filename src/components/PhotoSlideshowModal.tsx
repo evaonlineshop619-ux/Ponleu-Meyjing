@@ -68,7 +68,7 @@ export const PhotoSlideshowModal: React.FC<PhotoSlideshowModalProps> = ({ isOpen
                     ១
                   </span>
                   <span>
-                    ចុចប៊ូតុង <strong className="text-[#0d7bb8]">«+ បន្ថែមរូប»</strong> នៅរបារខាងលើស្លាយ
+                    ចុចប៊ូតុង <strong className="text-[#0d7bb8]">«+»</strong> នៅរបារខាងលើស្លាយ
                   </span>
                 </li>
                 <li className="flex items-start gap-2">

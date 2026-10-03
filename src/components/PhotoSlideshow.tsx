@@ -338,11 +338,11 @@ export const PhotoSlideshow: React.FC<PhotoSlideshowProps> = ({
           {allowAddPhoto && !full && (
             <button
               onClick={() => setIsAddModalOpen(true)}
-              className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#1289dc] hover:bg-[#0c7ac6] text-white text-xs font-khmer font-bold tracking-wide shadow-xs transition-all active:scale-95"
-              title="បន្ថែមរូបថតចូលក្នុងស្លាយ"
+              className="w-8 h-8 rounded-full bg-[#1289dc] hover:bg-[#0c7ac6] text-white flex items-center justify-center transition-all shadow-xs active:scale-95"
+              title="បន្ថែមរូបថតចូលក្នុងស្លាយ (+)"
+              aria-label="បន្ថែមរូបថត"
             >
-              <Plus className="w-3.5 h-3.5" />
-              <span>បន្ថែមរូប</span>
+              <Plus className="w-4 h-4" />
             </button>
           )}
 
