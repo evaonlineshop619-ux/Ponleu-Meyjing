@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { X, Share2, Copy, Check, QrCode, Smartphone } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { X, Share2, Copy, Check, QrCode } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import QRCode from 'qrcode';
 
 interface ShareModalProps {
   isOpen: boolean;
@@ -9,7 +10,24 @@ interface ShareModalProps {
 
 export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose }) => {
   const [copied, setCopied] = useState(false);
-  const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://invitation.ponleu-meyjing.com';
+  const [qrCodeUrl, setQrCodeUrl] = useState<string>('');
+  const currentUrl = 'https://ponleu-meyjing.vercel.app/';
+
+  useEffect(() => {
+    if (currentUrl) {
+      QRCode.toDataURL(currentUrl, {
+        width: 480,
+        margin: 1.5,
+        color: {
+          dark: '#002f4a',
+          light: '#ffffff',
+        },
+        errorCorrectionLevel: 'H',
+      })
+        .then((url) => setQrCodeUrl(url))
+        .catch((err) => console.error('Error generating link QR:', err));
+    }
+  }, [currentUrl]);
 
   if (!isOpen) return null;
 
@@ -21,22 +39,6 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose }) => {
     } catch {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    }
-  };
-
-  const handleNativeShare = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: 'ពិធីភ្ជាប់ពាក្យ ពន្លឺ & ម៉ីជីង',
-          text: 'សូមគោរពអញ្ជើញចូលរួមពិធីពិសាស្លាភ្ជាប់ពាក្យ ពន្លឺ & ម៉ីជីង នៅថ្ងៃអង្គារ ទី១៧ ខែសីហា ឆ្នាំ២០២៧ នៅរាជធានីភ្នំពេញ។',
-          url: currentUrl,
-        });
-      } catch {
-        // Ignored if user dismissed
-      }
-    } else {
-      handleCopy();
     }
   };
 
@@ -69,89 +71,52 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose }) => {
 
           {/* Content Body */}
           <div className="p-6 text-center space-y-4 font-khmer">
-            {/* Stylized QR Code */}
+            {/* Real Generated QR Code */}
             <motion.div
-              whileHover={{ scale: 1.03 }}
-              className="w-44 h-44 mx-auto p-3.5 bg-white border-2 border-sky-100 rounded-2xl shadow-sm flex flex-col items-center justify-center relative group"
+              whileHover={{ scale: 1.02 }}
+              className="w-48 h-48 mx-auto p-2.5 bg-white border-2 border-sky-100 rounded-2xl shadow-sm flex flex-col items-center justify-center relative group"
             >
-              {/* SVG QR Code Pattern */}
-              <svg viewBox="0 0 100 100" className="w-full h-full text-[#0a6699]">
-                {/* Corner position markers */}
-                <rect x="5" y="5" width="28" height="28" rx="4" fill="none" stroke="currentColor" strokeWidth="4" />
-                <rect x="11" y="11" width="16" height="16" rx="2" fill="currentColor" />
-
-                <rect x="67" y="5" width="28" height="28" rx="4" fill="none" stroke="currentColor" strokeWidth="4" />
-                <rect x="73" y="11" width="16" height="16" rx="2" fill="currentColor" />
-
-                <rect x="5" y="67" width="28" height="28" rx="4" fill="none" stroke="currentColor" strokeWidth="4" />
-                <rect x="11" y="73" width="16" height="16" rx="2" fill="currentColor" />
-
-                {/* Data pixel simulation */}
-                <rect x="38" y="10" width="6" height="6" rx="1" fill="currentColor" />
-                <rect x="50" y="10" width="8" height="6" rx="1" fill="currentColor" />
-                <rect x="42" y="22" width="6" height="6" rx="1" fill="currentColor" />
-                <rect x="54" y="24" width="6" height="6" rx="1" fill="currentColor" />
-                <rect x="10" y="42" width="6" height="6" rx="1" fill="currentColor" />
-                <rect x="22" y="42" width="6" height="8" rx="1" fill="currentColor" />
-                <rect x="34" y="38" width="8" height="8" rx="1" fill="currentColor" />
-                <rect x="46" y="38" width="8" height="8" rx="1" fill="currentColor" />
-                <rect x="58" y="44" width="6" height="6" rx="1" fill="currentColor" />
-                <rect x="70" y="42" width="8" height="6" rx="1" fill="currentColor" />
-                <rect x="84" y="44" width="6" height="6" rx="1" fill="currentColor" />
-                <rect x="38" y="54" width="6" height="6" rx="1" fill="currentColor" />
-                <rect x="48" y="52" width="8" height="8" rx="1" fill="currentColor" />
-                <rect x="62" y="54" width="6" height="6" rx="1" fill="currentColor" />
-                <rect x="40" y="72" width="6" height="6" rx="1" fill="currentColor" />
-                <rect x="52" y="68" width="6" height="6" rx="1" fill="currentColor" />
-                <rect x="68" y="70" width="8" height="6" rx="1" fill="currentColor" />
-                <rect x="80" y="72" width="8" height="8" rx="1" fill="currentColor" />
-                <rect x="44" y="84" width="8" height="6" rx="1" fill="currentColor" />
-                <rect x="58" y="84" width="8" height="6" rx="1" fill="currentColor" />
-                <rect x="74" y="86" width="6" height="6" rx="1" fill="currentColor" />
-              </svg>
+              {qrCodeUrl ? (
+                <img
+                  src={qrCodeUrl}
+                  alt="Wedding Invitation Link QR Code"
+                  className="w-full h-full object-contain rounded-xl"
+                />
+              ) : (
+                <div className="w-full h-full bg-sky-50 rounded-xl flex items-center justify-center animate-pulse">
+                  <QrCode className="w-10 h-10 text-sky-400" />
+                </div>
+              )}
 
               {/* Central Heart badge */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-8 h-8 rounded-full bg-white border border-sky-200 shadow-xs flex items-center justify-center animate-pulse">
+                <div className="w-8 h-8 rounded-full bg-white border border-sky-200 shadow-sm flex items-center justify-center">
                   <span className="text-xs">💍</span>
                 </div>
               </div>
             </motion.div>
 
-            <p className="text-xs text-slate-500 font-khmer">
-              ស្កេនជាមួយកាមេរ៉ាទូរស័ព្ទដៃ ដើម្បីបើកមើលលិខិតអញ្ជើញឌីជីថលដោយផ្ទាល់។
-            </p>
-
-            {/* Share Actions */}
-            <div className="space-y-2 pt-2 font-khmer">
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={handleNativeShare}
-                className="w-full py-3 px-4 rounded-xl bg-[#1289dc] hover:bg-[#0c7ac6] text-white text-xs font-khmer font-bold tracking-wider flex items-center justify-center gap-2 shadow-xs transition-all"
-              >
-                <Smartphone className="w-4 h-4" />
-                <span>ចែករំលែកតាមកម្មវិធីទូរស័ព្ទ</span>
-              </motion.button>
-
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+            <div className="space-y-2">
+              <p className="text-xs text-slate-600 font-medium">
+                ស្កេនជាមួយកាមេរ៉ាទូរស័ព្ទដៃ ដើម្បីបើកមើលលិខិតអញ្ជើញឌីជីថល
+              </p>
+              <button
                 onClick={handleCopy}
-                className="w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-khmer font-semibold flex items-center justify-center gap-2 transition-all"
+                className="text-[12px] text-sky-700 hover:text-sky-900 font-mono inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-50 hover:bg-sky-100 transition-colors border border-sky-100"
+                title="ចុចដើម្បីចម្លងតំណភ្ជាប់"
               >
+                <span>{currentUrl}</span>
                 {copied ? (
-                  <>
-                    <Check className="w-4 h-4 text-emerald-600" />
-                    <span className="text-emerald-700 font-bold">បានចម្លងតំណភ្ជាប់!</span>
-                  </>
+                  <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                 ) : (
-                  <>
-                    <Copy className="w-4 h-4 text-slate-500" />
-                    <span>ចម្លងតំណភ្ជាប់លិខិតអញ្ជើញ</span>
-                  </>
+                  <Copy className="w-3.5 h-3.5 text-sky-500 shrink-0" />
                 )}
-              </motion.button>
+              </button>
+              {copied && (
+                <p className="text-[11px] text-emerald-600 font-semibold animate-fade-in">
+                  បានចម្លងតំណភ្ជាប់ជោគជ័យ!
+                </p>
+              )}
             </div>
           </div>
         </motion.div>
