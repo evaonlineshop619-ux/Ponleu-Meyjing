@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { X, Heart, Sparkles, BookOpen, Camera, Calendar } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PhotoSlideshow } from './PhotoSlideshow';
+import heroEngagementImg from '../assets/images/hero_engagement_ceremony_1790854646265.jpg';
+import khmerPortraitImg from '../assets/images/khmer_engagement_portrait_1790932067653.jpg';
+import ringsJasmineImg from '../assets/images/rings_jasmine_tray_1790854677694.jpg';
+import storyAngkorImg from '../assets/images/story_angkor_sunrise_1790854665750.jpg';
 
 interface StoryGalleryModalProps {
   isOpen: boolean;
@@ -41,7 +45,8 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({ isOpen, on
     {
       title: 'ថ្ងៃរះលើទឹកដីអង្គរ',
       caption: 'ការចងចាំដ៏ផ្អែមល្ហែមនៅខេត្តសៀមរាប',
-      tag: 'អនុស្សាវរីយ៍',
+      tag: 'ដំណើរកម្សាន្ត',
+      image: storyAngkorImg,
       gradient: 'from-[#a1c4fd] to-[#c2e9fb]',
       accent: '#2b7fb3',
     },
@@ -49,20 +54,23 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({ isOpen, on
       title: 'សូត្រខ្មែរប្រពៃណី',
       caption: 'ការសាកឈុតសម្លៀកបំពាក់ប្រពៃណីសម្រាប់ពិធីភ្ជាប់ពាក្យ',
       tag: 'ប្រពៃណីខ្មែរ',
+      image: khmerPortraitImg,
       gradient: 'from-[#e0c3fc] to-[#8ec5fc]',
       accent: '#6366f1',
     },
     {
-      title: 'លំហែកាយមាត់ទន្លេ',
-      caption: 'ការដើរកំសាន្តនាពេលល្ងាចតាមមាត់ទន្លេស៊ីសុវត្ថិ',
-      tag: 'ភ្នំពេញ',
+      title: 'ពិធីមង្គលភ្ជាប់ពាក្យ',
+      caption: 'ស្នាមញញឹម និងភាពកក់ក្តៅរបស់គូដណ្តប់',
+      tag: 'ពិធីមង្គល',
+      image: heroEngagementImg,
       gradient: 'from-[#cfd9df] to-[#e2ebf0]',
       accent: '#475569',
     },
     {
       title: 'ចិញ្ចៀន និងការសន្យា',
-      caption: 'ការសន្យាសេចក្តីស្រឡាញ់ជារៀងរហូត',
-      tag: 'ថ្ងៃពិសេស',
+      caption: 'ការសន្យាសេចក្តីស្រឡាញ់ជារៀងរហូតលើជើងពានផ្កាម្លិះ',
+      tag: 'ចិញ្ចៀនភ្ជាប់ពាក្យ',
+      image: ringsJasmineImg,
       gradient: 'from-[#fbc2eb] to-[#a6c1ee]',
       accent: '#db2777',
     },
@@ -203,19 +211,26 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({ isOpen, on
                       onClick={() => setSelectedPhoto(idx)}
                       className="group relative rounded-2xl overflow-hidden cursor-pointer border border-sky-100 shadow-xs hover:shadow-md transition-shadow aspect-4/3 flex flex-col justify-end p-3 text-left"
                     >
-                      <div
-                        className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-90 transition-transform duration-500 group-hover:scale-105`}
-                      />
-                      {/* Decorative pattern */}
-                      <div className="absolute inset-0 flex items-center justify-center opacity-15">
-                        <Heart className="w-16 h-16 text-slate-800" />
-                      </div>
+                      {item.image ? (
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          referrerPolicy="no-referrer"
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div
+                          className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-90 transition-transform duration-500 group-hover:scale-105`}
+                        />
+                      )}
+                      {/* Gradient shadow for readable title */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/20 to-transparent pointer-events-none" />
 
-                      <div className="relative z-10 bg-white/85 backdrop-blur-xs p-2 rounded-xl border border-white/80">
-                        <span className="text-[9px] font-khmer uppercase font-bold text-sky-700 tracking-wider block">
+                      <div className="relative z-10 p-2 text-white">
+                        <span className="text-[9px] font-khmer uppercase font-bold text-sky-200 tracking-wider block drop-shadow-xs">
                           {item.tag}
                         </span>
-                        <h5 className="font-moul text-xs text-slate-800 leading-normal truncate">
+                        <h5 className="font-moul text-xs text-white leading-normal truncate drop-shadow-sm">
                           {item.title}
                         </h5>
                       </div>
@@ -240,15 +255,26 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({ isOpen, on
                     >
                       <button
                         onClick={() => setSelectedPhoto(null)}
-                        className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800"
+                        className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-white/80 hover:bg-white flex items-center justify-center text-slate-700 shadow-sm"
                       >
                         <X className="w-4 h-4" />
                       </button>
-                      <div
-                        className={`w-full h-56 rounded-2xl bg-gradient-to-br ${galleryItems[selectedPhoto].gradient} flex items-center justify-center mb-4`}
-                      >
-                        <Heart className="w-16 h-16 text-white/70 animate-pulse" />
-                      </div>
+                      {galleryItems[selectedPhoto].image ? (
+                        <div className="w-full h-64 rounded-2xl overflow-hidden mb-4 bg-slate-100 shadow-xs">
+                          <img
+                            src={galleryItems[selectedPhoto].image}
+                            alt={galleryItems[selectedPhoto].title}
+                            referrerPolicy="no-referrer"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ) : (
+                        <div
+                          className={`w-full h-56 rounded-2xl bg-gradient-to-br ${galleryItems[selectedPhoto].gradient} flex items-center justify-center mb-4`}
+                        >
+                          <Heart className="w-16 h-16 text-white/70 animate-pulse" />
+                        </div>
+                      )}
                       <span className="text-xs font-khmer font-bold text-[#0a6699] uppercase tracking-wider block">
                         {galleryItems[selectedPhoto].tag}
                       </span>

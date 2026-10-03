@@ -55,6 +55,40 @@ export const PhotoSlideshowModal: React.FC<PhotoSlideshowModalProps> = ({ isOpen
                 ផ្ទាំងស្លាយរូបថតស្វ័យប្រវត្តិនៃអនុស្សាវរីយ៍ដ៏មានតម្លៃរបស់គូដណ្តប់ <strong>ពន្លឺ &amp; ម៉ីជីង</strong>។ លោកអ្នកអាចចុចព្រួញឆ្វេង-ស្តាំ ឬជ្រើសរើសរូបថតតូចៗខាងក្រោមដើម្បីទស្សនា។
               </p>
             </div>
+
+            {/* Helpful guide card on how to add photos */}
+            <div className="p-4 rounded-2xl bg-sky-50/80 border border-sky-200/80 text-xs text-sky-950 space-y-2">
+              <div className="flex items-center gap-2 font-bold text-[#0a6699]">
+                <Sparkles className="w-4 h-4 text-amber-500" />
+                <span>របៀបបន្ថែមរូបថតចូលក្នុងស្លាយ (How to Add Photos):</span>
+              </div>
+              <ul className="space-y-1.5 text-slate-700 text-[11px] sm:text-xs leading-relaxed">
+                <li className="flex items-start gap-2">
+                  <span className="w-5 h-5 rounded-full bg-[#1289dc] text-white flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">
+                    ១
+                  </span>
+                  <span>
+                    ចុចប៊ូតុង <strong className="text-[#0d7bb8]">«+ បន្ថែមរូប»</strong> នៅរបារខាងលើស្លាយ
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-5 h-5 rounded-full bg-[#1289dc] text-white flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">
+                    ២
+                  </span>
+                  <span>
+                    ជ្រើសរើសរូបថតពីទូរស័ព្ទ ឬកុំព្យូទ័រ (គាំទ្រ JPG, PNG, WebP) ឬបញ្ចូលតំណភ្ជាប់ URL
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-5 h-5 rounded-full bg-[#1289dc] text-white flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">
+                    ៣
+                  </span>
+                  <span>
+                    បញ្ចូលចំណងជើង រួចចុច <strong>«បញ្ចូលទៅក្នុងស្លាយ»</strong> — រូបថតនឹងបង្ហាញក្នុងស្លាយភ្លាមៗ!
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </motion.div>
       </div>
